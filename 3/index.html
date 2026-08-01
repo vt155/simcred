@@ -1,0 +1,1188 @@
+<!DOCTYPE html><html lang="pt-BR"><head><script src="/jquery-4.0.0.min.js"></script>
+  <script src="/js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
+  <script>
+  window.pixelId = "69122e1651618c82cbe95013";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Informações do Empréstimo — SimCred</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@400;500;600;700&family=Sora:wght@700;800&display=swap');
+
+    :root {
+      --green: #22C55E;
+      --green-dark: #1a9e4c;
+      --green-light: #d1fae5;
+      --green-subtle: #f0fdf4;
+      --navy: #042444;
+      --navy-dark: #021830;
+      --navy-light: #0a3a6e;
+      --bg: #F4F5F7;
+      --card: #FFFFFF;
+      --text: #042444;
+      --text-mid: #1e3a5f;
+      --text-light: #6B7280;
+      --border: #E5E7EB;
+      --border-light: #F3F4F6;
+      --danger: #EF4444;
+      --radius: 18px;
+      --shadow: 0 4px 24px rgba(4,36,68,.08), 0 1px 2px rgba(4,36,68,.04);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+
+    body{
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      padding-top: 72px;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* =================== HEADER =================== */
+    header.header{
+      background: var(--navy);
+      padding: 12px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(4,36,68,0.3);
+    }
+    .header-content{
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .header-left{
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .menu-icon{
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .menu-icon:hover{
+      background: rgba(255,255,255,0.18);
+      transform: scale(1.05);
+    }
+    .menu-icon svg{
+      width: 18px;
+      height: 18px;
+      color: rgba(255,255,255,0.85);
+      stroke-width: 2.5;
+    }
+
+    .logo-wrap{
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo-img{
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .header-right{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .user-info{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1px;
+    }
+    .user-name{
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 120px;
+    }
+    .user-cpf{
+      font-size: 11px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.3px;
+    }
+    .user-icon-wrapper{
+      width: 36px;
+      height: 36px;
+      background: rgba(34,197,94,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--green);
+      flex-shrink: 0;
+      color: var(--green);
+    }
+    .user-icon-wrapper svg{
+      width: 18px;
+      height: 18px;
+      stroke-width: 2;
+    }
+
+    /* =================== CONTAINER =================== */
+    .container{
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 20px;
+      flex: 1;
+      overflow: visible;
+    }
+
+    /* =================== CARD =================== */
+    .card{
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 32px rgba(4,36,68,0.1), 0 1px 4px rgba(4,36,68,0.06);
+      padding: 24px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+      overflow: visible;
+      position: relative;
+    }
+
+    /* =================== PROGRESS =================== */
+    .progress-bar{
+      background: var(--border-light);
+      border-radius: 10px;
+      height: 5px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    .progress-fill{
+      background: linear-gradient(90deg, var(--navy-light), var(--green));
+      height: 100%;
+      width: 20%;
+      border-radius: 10px;
+      transition: width 0.5s cubic-bezier(.22,.68,0,1);
+    }
+    .step-counter{
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    /* =================== STEP HEADER =================== */
+    .step-header{
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .step-header h1{
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 0 0 6px;
+      color: var(--navy);
+      letter-spacing: -0.3px;
+    }
+    .step-header p{
+      color: var(--text-light);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* =================== STEP PANELS =================== */
+    .step-panel{
+      display: none;
+      animation: fadeIn 0.35s ease;
+    }
+    .step-panel.active{
+      display: block;
+    }
+    @keyframes fadeIn{
+      from{ opacity: 0; transform: translateY(12px); }
+      to{ opacity: 1; transform: translateY(0); }
+    }
+
+    /* =================== GRID CARDS =================== */
+    .option-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+    .option-card{
+      background: #fff;
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      user-select: none;
+    }
+    .option-card:hover{
+      border-color: var(--green);
+      background: var(--green-subtle);
+    }
+    .option-card.selected{
+      border-color: var(--green);
+      background: var(--green-subtle);
+      box-shadow: 0 0 0 3px rgba(34,197,94,.12);
+    }
+    .option-card .icon{
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+    }
+    .option-card .icon svg{
+      width: 28px;
+      height: 28px;
+      stroke-width: 1.5;
+    }
+    .option-card.selected .icon{
+      color: var(--green-dark);
+    }
+    .option-card span{
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-mid);
+      line-height: 1.3;
+    }
+    .option-card.selected span{
+      color: var(--green-dark);
+    }
+
+    /* =================== LIST OPTIONS =================== */
+    .option-list{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .option-list-label{
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding-left: 2px;
+    }
+    .option-item{
+      background: #fff;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      user-select: none;
+    }
+    .option-item:hover{
+      border-color: var(--green);
+      background: var(--green-subtle);
+    }
+    .option-item.selected{
+      border-color: var(--green);
+      background: var(--green-subtle);
+      box-shadow: 0 0 0 3px rgba(34,197,94,.12);
+    }
+    .option-item .item-icon{
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      flex-shrink: 0;
+    }
+    .option-item .item-icon svg{
+      width: 20px;
+      height: 20px;
+      stroke-width: 1.8;
+    }
+    .option-item.selected .item-icon{
+      color: var(--green-dark);
+    }
+    .option-item .item-text{
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-mid);
+    }
+    .option-item.selected .item-text{
+      color: var(--green-dark);
+      font-weight: 600;
+    }
+
+    /* =================== INPUT FIELDS =================== */
+    .input-section{
+      margin-bottom: 24px;
+    }
+    .input-header{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .input-header-icon{
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .input-header-icon svg{
+      width: 22px;
+      height: 22px;
+      stroke-width: 1.8;
+    }
+    .input-header-text h3{
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 0;
+    }
+    .input-header-text p{
+      font-size: 12.5px;
+      color: var(--text-light);
+      margin: 2px 0 0;
+    }
+    .form-input{
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 500;
+      background: #fff;
+      color: var(--navy);
+      transition: all 0.2s ease;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .form-input:focus{
+      outline: none;
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(34,197,94,.12);
+    }
+    .form-input::placeholder{
+      color: #C0C5CC;
+      font-weight: 400;
+    }
+
+    .form-select-new{
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      font-size: 15px;
+      background: #fff;
+      color: var(--text-mid);
+      transition: all 0.2s ease;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+      background-position: right 14px center;
+      background-repeat: no-repeat;
+      background-size: 16px;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .form-select-new:focus{
+      outline: none;
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(34,197,94,.12);
+    }
+
+    /* =================== SITUATION CARDS =================== */
+    .situation-card{
+      background: #fff;
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+      user-select: none;
+    }
+    .situation-card:hover{
+      border-color: var(--green);
+    }
+    .situation-card.selected{
+      border-color: var(--green);
+      background: var(--green-subtle);
+      box-shadow: 0 0 0 3px rgba(34,197,94,.12);
+    }
+    .situation-icon{
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .situation-icon svg{
+      width: 20px;
+      height: 20px;
+      stroke-width: 2;
+    }
+    .situation-text h4{
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 0;
+    }
+    .situation-text p{
+      font-size: 12.5px;
+      color: var(--text-light);
+      margin: 2px 0 0;
+    }
+    .situation-card.selected .situation-text h4{
+      color: var(--green-dark);
+    }
+    .situation-card.selected .situation-text p{
+      color: var(--green-dark);
+    }
+
+    /* =================== REASSURANCE =================== */
+    .reassurance{
+      background: linear-gradient(135deg, #f0fdf4, #e0f2fe);
+      border-radius: 12px;
+      padding: 14px 16px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--navy);
+      line-height: 1.5;
+      margin-top: 6px;
+      border: 1px solid rgba(34,197,94,0.15);
+      font-weight: 500;
+    }
+
+    /* =================== BUTTONS =================== */
+    .btn-row{
+      display: flex;
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .btn-back{
+      padding: 14px 20px;
+      background: #fff;
+      color: var(--navy);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      font-size: 14.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: 'DM Sans', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .btn-back:hover{
+      background: var(--border-light);
+      border-color: var(--navy);
+    }
+    .btn-back svg{
+      width: 16px;
+      height: 16px;
+      stroke-width: 2.5;
+    }
+    .btn-next{
+      flex: 1;
+      padding: 14px;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      font-family: 'DM Sans', sans-serif;
+      box-shadow: 0 4px 15px rgba(34,197,94,.3);
+    }
+    .btn-next:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(34,197,94,.4);
+    }
+    .btn-next:active{ transform: scale(0.98); }
+    .btn-next:disabled{
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+    .btn-next.processing{
+      pointer-events: none;
+    }
+    .btn-next .spinner-inline{
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 2.5px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin: 0 auto;
+    }
+    .btn-next.processing .btn-text{ display: none; }
+    .btn-next.processing .spinner-inline{ display: block; }
+
+    @keyframes spin{ to{transform:rotate(360deg);} }
+
+    /* =================== ERROR =================== */
+    .error-toast{
+      display: none;
+      background: #FEF2F2;
+      color: #DC2626;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 500;
+      text-align: center;
+      margin-top: 12px;
+      border: 1px solid #FECACA;
+      animation: shake 0.4s ease;
+    }
+    @keyframes shake{
+      0%,100%{transform:translateX(0);}
+      25%{transform:translateX(-5px);}
+      75%{transform:translateX(5px);}
+    }
+
+    /* =================== SUCCESS =================== */
+    .success-feedback{
+      display: none;
+      background: var(--green-subtle);
+      color: var(--green-dark);
+      padding: 16px;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 16px;
+      font-weight: 500;
+      font-size: 14px;
+      border: 1px solid #BBF7D0;
+    }
+    .success-feedback-inner{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .success-feedback svg{
+      width: 18px;
+      height: 18px;
+      color: var(--green);
+    }
+
+    /* =================== TRUST BAR =================== */
+    .trust-bar{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 10px 14px;
+      background: var(--green-subtle);
+      border-radius: 10px;
+      border: 1px solid #BBF7D0;
+    }
+    .trust-bar svg{
+      width: 16px; height: 16px;
+      color: var(--green-dark);
+      flex-shrink: 0;
+    }
+    .trust-bar span{
+      font-size: 12px;
+      color: var(--green-dark);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* =================== FOOTER =================== */
+    footer.site-footer{
+      margin-top: auto;
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      padding: 24px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-inner{
+      max-width: 420px; width: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 10px;
+    }
+    .footer-logo{
+      display: flex; align-items: center;
+    }
+    .footer-logo-img{
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      filter: brightness(1.1);
+    }
+    footer small{
+      font-size: 11px;
+      opacity: 0.7;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.5);
+    }
+    footer small strong{ color: var(--green); font-weight: 600; }
+    .footer-badges{
+      display: flex; align-items: center; gap: 16px; margin-top: 4px;
+    }
+    .footer-badges span{
+      display: flex; align-items: center; gap: 4px;
+      font-size: 10px; color: rgba(255,255,255,0.4); font-weight: 500;
+    }
+    .footer-badges svg{ width: 12px; height: 12px; color: var(--green); }
+
+    @media (max-width: 480px){
+      .container{ padding: 16px; }
+      .card{ padding: 20px; }
+      .step-header h1{ font-size: 1.25rem; }
+      .logo-img{ height: 38px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-content">
+    <div class="header-left">
+      <div class="menu-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </div>
+      <a href="index.html" class="logo-wrap">
+        <img src="/images/Sim-Cred.png" alt="SimCred" class="logo-img">
+      </a>
+    </div>
+    
+    <div class="header-right">
+      <div class="user-info">
+        <span class="user-name" id="userName">Usuário</span>
+        <span class="user-cpf" id="userCpf">000.***.***-00</span>
+      </div>
+      <div class="user-icon-wrapper">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="card">
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div class="step-counter" id="stepCounter">1 de 5</div>
+
+    <!-- ========== STEP 1: Finalidade ========== -->
+    <div class="step-panel active" id="step1">
+      <div class="step-header">
+        <h1>Finalidade do Empréstimo</h1>
+        <p>Para que você precisa do empréstimo?</p>
+      </div>
+
+      <div class="option-grid" data-field="loanPurpose">
+        <div class="option-card" data-value="Pagar dívidas">
+          <div class="icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2" stroke-width="1.5"></rect><path d="M2 10h20" stroke-width="1.5"></path></svg>
+          </div>
+          <span>Pagar dívidas</span>
+        </div>
+        <div class="option-card" data-value="Saúde">
+          <div class="icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+          </div>
+          <span>Emergência médica</span>
+        </div>
+        <div class="option-card" data-value="Investimento">
+          <div class="icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+          </div>
+          <span>Meu negócio</span>
+        </div>
+        <div class="option-card" data-value="Reforma">
+          <div class="icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+          </div>
+          <span>Reformar casa</span>
+        </div>
+        <div class="option-card" data-value="Compras">
+          <div class="icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"></path></svg>
+          </div>
+          <span>Compras</span>
+        </div>
+        <div class="option-card" data-value="Outros">
+          <div class="icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" stroke-width="1.5"></circle><circle cx="12" cy="12" r="9" stroke-width="1.5"></circle></svg>
+          </div>
+          <span>Outros motivos</span>
+        </div>
+      </div>
+
+      <div class="error-toast" id="error1">Por favor, selecione uma finalidade</div>
+
+      <div class="btn-row">
+        <button type="button" class="btn-next" id="btnNext1" onclick="nextStep(1)">
+          <span class="btn-text">Continuar</span>
+          <div class="spinner-inline"></div>
+        </button>
+      </div>
+    </div>
+
+    <!-- ========== STEP 2: Ocupação ========== -->
+    <div class="step-panel" id="step2">
+      <div class="step-header">
+        <h1>Ocupação</h1>
+        <p>Informe sua ocupação</p>
+      </div>
+
+      <div class="option-list-label">Sua ocupação</div>
+      <div class="option-list" data-field="occupation">
+        <div class="option-item" data-value="Empregado CLT">
+          <div class="item-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg></div>
+          <span class="item-text">Assalariado CLT</span>
+        </div>
+        <div class="option-item" data-value="Funcionário público">
+          <div class="item-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path></svg></div>
+          <span class="item-text">Servidor público</span>
+        </div>
+        <div class="option-item" data-value="Autônomo">
+          <div class="item-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M14.121 14.121L19 19m-7-7l7-7m-2.121 2.121a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243zM14.121 14.121A3 3 0 109.88 9.88a3 3 0 004.242 4.242zM9.88 9.88L5 5m2.121 2.121a3 3 0 104.243 4.243"></path></svg></div>
+          <span class="item-text">Autônomo</span>
+        </div>
+        <div class="option-item" data-value="Empresário">
+          <div class="item-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
+          <span class="item-text">Empresário / MEI</span>
+        </div>
+        <div class="option-item" data-value="Aposentado/Pensionista">
+          <div class="item-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></div>
+          <span class="item-text">Aposentado / Pensionista</span>
+        </div>
+        <div class="option-item" data-value="Desempregado">
+          <div class="item-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div>
+          <span class="item-text">Desempregado</span>
+        </div>
+        <div class="option-item" data-value="Dona de casa">
+          <div class="item-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg></div>
+          <span class="item-text">Dona de casa</span>
+        </div>
+        <div class="option-item" data-value="Estudante">
+          <div class="item-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg></div>
+          <span class="item-text">Estudante</span>
+        </div>
+        <div class="option-item" data-value="Rentista">
+          <div class="item-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+          <span class="item-text">Rentista</span>
+        </div>
+        <div class="option-item" data-value="Outro">
+          <div class="item-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" stroke-width="1.8"></circle><circle cx="12" cy="12" r="9" stroke-width="1.8"></circle></svg></div>
+          <span class="item-text">Outro</span>
+        </div>
+      </div>
+
+      <div class="error-toast" id="error2">Por favor, selecione sua ocupação</div>
+
+      <div class="btn-row">
+        <button type="button" class="btn-back" onclick="prevStep(2)">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+          Voltar
+        </button>
+        <button type="button" class="btn-next" id="btnNext2" onclick="nextStep(2)">
+          <span class="btn-text">Continuar</span>
+          <div class="spinner-inline"></div>
+        </button>
+      </div>
+    </div>
+
+    <!-- ========== STEP 3: Renda + Dia de Recebimento ========== -->
+    <div class="step-panel" id="step3">
+      <div class="step-header">
+        <h1>Renda e Dia de Recebimento</h1>
+        <p>Informe sua renda mensal e dia de recebimento</p>
+      </div>
+
+      <div class="input-section">
+        <div class="input-header">
+          <div class="input-header-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <div class="input-header-text">
+            <h3>Renda mensal</h3>
+            <p>Informe sua renda líquida (valor que recebe)</p>
+          </div>
+        </div>
+        <select class="form-select-new" id="monthlyIncome" data-field="monthlyIncome">
+          <option value="" disabled="" selected="">Selecione sua renda</option>
+          <option value="Até R$ 1.500">Até R$ 1.500</option>
+          <option value="R$ 1.500 a R$ 3.000">R$ 1.500 a R$ 3.000</option>
+          <option value="R$ 3.000 a R$ 5.000">R$ 3.000 a R$ 5.000</option>
+          <option value="R$ 5.000 a R$ 10.000">R$ 5.000 a R$ 10.000</option>
+          <option value="Acima de R$ 10.000">Acima de R$ 10.000</option>
+        </select>
+      </div>
+
+      <div class="input-section">
+        <div class="input-header">
+          <div class="input-header-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+          </div>
+          <div class="input-header-text">
+            <h3>Dia de recebimento</h3>
+            <p>Que dia do mês você costuma receber?</p>
+          </div>
+        </div>
+        <input type="tel" class="form-input" id="paymentDay" data-field="paymentDay" placeholder="Ex: 5, 10, 15, 25..." maxlength="2" inputmode="numeric">
+      </div>
+
+      <div class="error-toast" id="error3">Por favor, preencha a renda e um dia válido (1 a 31)</div>
+
+      <div class="btn-row">
+        <button type="button" class="btn-back" onclick="prevStep(3)">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+          Voltar
+        </button>
+        <button type="button" class="btn-next" id="btnNext3" onclick="nextStep(3)">
+          <span class="btn-text">Continuar</span>
+          <div class="spinner-inline"></div>
+        </button>
+      </div>
+    </div>
+
+    <!-- ========== STEP 4: Escolaridade ========== -->
+    <div class="step-panel" id="step4">
+      <div class="step-header">
+        <h1>Escolaridade</h1>
+        <p>Informe seu nível de escolaridade</p>
+      </div>
+
+      <div class="option-list-label">Sua escolaridade</div>
+      <div class="option-list" data-field="education">
+        <div class="option-item" data-value="Fundamental">
+          <div class="item-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg></div>
+          <span class="item-text">Ensino Fundamental</span>
+        </div>
+        <div class="option-item" data-value="Médio">
+          <div class="item-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg></div>
+          <span class="item-text">Ensino Médio</span>
+        </div>
+        <div class="option-item" data-value="Superior">
+          <div class="item-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg></div>
+          <span class="item-text">Ensino Superior</span>
+        </div>
+        <div class="option-item" data-value="Pós-Graduação">
+          <div class="item-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg></div>
+          <span class="item-text">Pós-Graduação</span>
+        </div>
+        <div class="option-item" data-value="Outro">
+          <div class="item-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" stroke-width="1.8"></circle><circle cx="12" cy="12" r="9" stroke-width="1.8"></circle></svg></div>
+          <span class="item-text">Outro</span>
+        </div>
+      </div>
+
+      <div class="error-toast" id="error4">Por favor, selecione sua escolaridade</div>
+
+      <div class="btn-row">
+        <button type="button" class="btn-back" onclick="prevStep(4)">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+          Voltar
+        </button>
+        <button type="button" class="btn-next" id="btnNext4" onclick="nextStep(4)">
+          <span class="btn-text">Continuar</span>
+          <div class="spinner-inline"></div>
+        </button>
+      </div>
+    </div>
+
+    <!-- ========== STEP 5: Situação do CPF ========== -->
+    <div class="step-panel" id="step5">
+      <div class="step-header">
+        <h1>Situação do CPF</h1>
+        <p>Seu nome está negativado?</p>
+      </div>
+
+      <div data-field="cpfSituation">
+        <div class="situation-card" data-value="Negativado" onclick="selectSituation(this)">
+          <div class="situation-icon" style="background:#FEE2E2;">
+            <svg fill="none" stroke="#EF4444" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </div>
+          <div class="situation-text">
+            <h4>Tenho algumas pendências</h4>
+            <p>Nome negativado ou restrições no CPF</p>
+          </div>
+        </div>
+
+        <div class="situation-card" data-value="Limpo" onclick="selectSituation(this)">
+          <div class="situation-icon" style="background:#DCFCE7;">
+            <svg fill="none" stroke="#22C55E" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          </div>
+          <div class="situation-text">
+            <h4>Meu nome está limpo</h4>
+            <p>Sem restrições ou negativação</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reassurance">
+        Não se preocupe! Trabalhamos com pessoas em qualquer situação de crédito
+      </div>
+
+      <div class="error-toast" id="error5">Por favor, selecione uma opção</div>
+
+      <div class="success-feedback" id="successFeedback">
+        <div class="success-feedback-inner">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          Informações validadas! Redirecionando...
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button type="button" class="btn-back" onclick="prevStep(5)">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+          Voltar
+        </button>
+        <button type="button" class="btn-next" id="btnNext5" onclick="nextStep(5)">
+          <span class="btn-text">Continuar</span>
+          <div class="spinner-inline"></div>
+        </button>
+      </div>
+    </div>
+
+    <div class="trust-bar">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+      </svg>
+      <span>Suas informações são utilizadas apenas para análise de crédito.</span>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="/images/Sim-Cred.png" alt="SimCred" class="footer-logo-img">
+    </div>
+    <small><strong>SimCred Soluções Financeiras Ltda.</strong><br>
+    CNPJ: 36.947.229/0001-85 – São Paulo, SP – 01310-200</small>
+    <div class="footer-badges">
+      <span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+        SSL Seguro
+      </span>
+      <span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+        Dados protegidos
+      </span>
+      <span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+        Instituição regulada
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function loadUserData() {
+    const nome = localStorage.getItem('nome');
+    const cpf = localStorage.getItem('cpf');
+    
+    if (nome) {
+      const nomes = nome.trim().split(' ');
+      const primeiroNome = nomes[0];
+      const ultimoNome = nomes.length > 1 ? nomes[nomes.length - 1] : '';
+      const nomeExibicao = ultimoNome ? `${primeiroNome} ${ultimoNome}` : primeiroNome;
+      document.getElementById('userName').textContent = nomeExibicao;
+    }
+    
+    if (cpf) {
+      const cpfLimpo = cpf.replace(/\D/g, '');
+      if (cpfLimpo.length === 11) {
+        const cpfMascarado = `${cpfLimpo.substring(0, 3)}.***.***-${cpfLimpo.substring(9, 11)}`;
+        document.getElementById('userCpf').textContent = cpfMascarado;
+      }
+    }
+  }
+  
+  document.addEventListener('DOMContentLoaded', loadUserData);
+
+  let currentStep = 1;
+  const totalSteps = 5;
+  const formData = {};
+
+  document.querySelectorAll('.option-grid .option-card').forEach(card => {
+    card.addEventListener('click', function() {
+      const grid = this.closest('.option-grid');
+      grid.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+      this.classList.add('selected');
+      const field = grid.dataset.field;
+      formData[field] = this.dataset.value;
+      hideError(currentStep);
+    });
+  });
+
+  document.querySelectorAll('.option-list .option-item').forEach(item => {
+    item.addEventListener('click', function() {
+      const list = this.closest('.option-list');
+      list.querySelectorAll('.option-item').forEach(i => i.classList.remove('selected'));
+      this.classList.add('selected');
+      const field = list.dataset.field;
+      formData[field] = this.dataset.value;
+      hideError(currentStep);
+    });
+  });
+
+  function selectSituation(card) {
+    const container = card.closest('[data-field]');
+    container.querySelectorAll('.situation-card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    formData[container.dataset.field] = card.dataset.value;
+    hideError(currentStep);
+  }
+
+  function updateProgress() {
+    const percent = (currentStep / totalSteps) * 100;
+    document.getElementById('progressFill').style.width = `${percent}%`;
+    document.getElementById('stepCounter').textContent = `${currentStep} de ${totalSteps}`;
+  }
+
+  function showStep(step) {
+    document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById(`step${step}`).classList.add('active');
+    currentStep = step;
+    updateProgress();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function showError(step) {
+    const el = document.getElementById(`error${step}`);
+    if (el) {
+      el.style.display = 'block';
+      setTimeout(() => { el.style.display = 'none'; }, 3000);
+    }
+  }
+
+  function hideError(step) {
+    const el = document.getElementById(`error${step}`);
+    if (el) el.style.display = 'none';
+  }
+
+  function validateStep(step) {
+    switch(step) {
+      case 1: return !!formData.loanPurpose;
+      case 2: return !!formData.occupation;
+      case 3: 
+        const income = document.getElementById('monthlyIncome').value;
+        const day = document.getElementById('paymentDay').value.trim();
+        return !!income && !!day && parseInt(day) >= 1 && parseInt(day) <= 31;
+      case 4: return !!formData.education;
+      case 5: return !!formData.cpfSituation;
+      default: return true;
+    }
+  }
+
+  function nextStep(step) {
+    if (!validateStep(step)) {
+      showError(step);
+      return;
+    }
+
+    if (step === 3) {
+      formData.monthlyIncome = document.getElementById('monthlyIncome').value;
+      formData.paymentDay = document.getElementById('paymentDay').value.trim();
+    }
+
+    if (step < totalSteps) {
+      showStep(step + 1);
+    } else {
+      const btn = document.getElementById(`btnNext${step}`);
+      btn.classList.add('processing');
+
+      setTimeout(() => {
+        document.getElementById('successFeedback').style.display = 'block';
+        document.getElementById('progressFill').style.width = '100%';
+        
+        setTimeout(() => {
+          const params = { ...formData };
+          const currentUrlParams = new URLSearchParams(window.location.search);
+          currentUrlParams.forEach((value, key) => { params[key] = value; });
+          const urlParams = new URLSearchParams(params);
+          window.location.href = `/4?${urlParams.toString()}`;
+        }, 1500);
+      }, 800);
+    }
+  }
+
+  function prevStep(step) {
+    if (step > 1) showStep(step - 1);
+  }
+
+  const paymentDayInput = document.getElementById('paymentDay');
+  paymentDayInput.addEventListener('input', function() {
+    this.value = this.value.replace(/\D/g, '');
+    const num = parseInt(this.value);
+    if (num > 31) this.value = '31';
+    if (num < 0) this.value = '';
+  });
+
+  updateProgress();
+</script>
+
+
+</body></html>

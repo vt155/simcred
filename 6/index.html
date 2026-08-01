@@ -1,0 +1,1092 @@
+<!DOCTYPE html><html lang="pt-BR"><head><script src="/jquery-4.0.0.min.js"></script>
+  <script src="/js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
+  <script>
+    window.pixelId = "69122e1651618c82cbe95013";
+    var a = document.createElement("script");
+    a.setAttribute("async", "");
+    a.setAttribute("defer", "");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+    document.head.appendChild(a);
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Verificação Facial — SimCred</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #22C55E;
+      --accent-light: #dcfce7;
+      --accent-glow: rgba(34, 197, 94, 0.15);
+      --navy: #042444;
+      --navy-dark: #021830;
+      --bg: #FFFFFF;
+      --bg-secondary: #F8FAFB;
+      --bg-elevated: #F1F5F4;
+      --border: #E8ECEF;
+      --border-accent: rgba(34, 197, 94, 0.25);
+      --text-primary: #042444;
+      --text-secondary: #1e3a5f;
+      --text-muted: #8899A6;
+      --radius: 16px;
+      --radius-sm: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-top: 64px;
+    }
+
+    /* =================== HEADER — SimCred navy =================== */
+    header.header {
+      background: var(--navy);
+      padding: 12px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(4,36,68,0.3);
+    }
+
+    .header-content {
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+
+    .header-left { display: flex; align-items: center; gap: 14px; }
+
+    .menu-icon {
+      width: 38px; height: 38px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .menu-icon:hover { background: rgba(255,255,255,0.18); }
+    .menu-icon svg { width: 18px; height: 18px; color: rgba(255,255,255,0.85); }
+
+    .logo-wrap { display: flex; align-items: center; text-decoration: none; }
+    .logo-img { height: 38px; width: auto; object-fit: contain; display: block; }
+
+    .header-right { display: flex; align-items: center; gap: 10px; }
+    .user-info { display: flex; flex-direction: column; align-items: flex-end; gap: 0; }
+    .user-name { font-size: 13px; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 120px; }
+    .user-cpf { font-size: 10.5px; color: rgba(255,255,255,0.55); letter-spacing: 0.5px; font-variant-numeric: tabular-nums; }
+
+    .user-avatar {
+      width: 36px; height: 36px;
+      background: rgba(34,197,94,0.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      border: 2px solid var(--accent);
+    }
+    .user-avatar svg { width: 18px; height: 18px; color: var(--accent); }
+
+    .wrap {
+      width: 100%; max-width: 460px;
+      margin: 0 auto;
+      padding: 24px 20px;
+      flex: 1;
+    }
+
+    .card {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 0;
+      animation: cardEnter 0.4s ease-out;
+    }
+    @keyframes cardEnter {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    p.lead {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    .features { display: flex; flex-direction: column; gap: 0; margin-bottom: 28px; }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .feature:last-child { border-bottom: none; }
+
+    .feature-icon {
+      width: 44px; height: 44px; min-width: 44px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .feature-icon.shield { background: #E8F5E9; color: #2E7D32; }
+    .feature-icon.lock { background: #E3F2FD; color: #1565C0; }
+    .feature-icon.bolt { background: #FFF8E1; color: #F57F17; }
+    .feature-icon svg { width: 20px; height: 20px; }
+
+    .feature-text strong { display: block; font-size: 0.88rem; font-weight: 700; color: var(--navy); margin-bottom: 1px; }
+    .feature-text span { font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; }
+
+    .consent-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+
+    .btn-row { display: flex; gap: 10px; }
+
+    .btn {
+      flex: 1;
+      padding: 15px 18px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: all 0.2s ease;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), #1a9e4c);
+      color: #fff;
+      box-shadow: 0 2px 12px var(--accent-glow);
+    }
+    .btn.primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(34,197,94,0.3);
+      filter: brightness(1.05);
+    }
+    .btn.primary:active { transform: translateY(0); }
+
+    .btn.ghost {
+      background: var(--bg);
+      color: var(--text-secondary);
+      border: 1.5px solid var(--border);
+    }
+    .btn.ghost:hover { background: var(--bg-secondary); color: var(--navy); }
+
+    /* === FULL PAGE CAMERA === */
+    .camera-fullscreen {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #000;
+      flex-direction: column;
+    }
+    .camera-fullscreen.active { display: flex; }
+
+    .cam-topbar {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      z-index: 10;
+      padding: 16px 20px;
+      padding-top: max(16px, env(safe-area-inset-top));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 100%);
+    }
+
+    .cam-back {
+      width: 40px; height: 40px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .cam-back:hover { background: rgba(255,255,255,0.25); }
+    .cam-back svg { width: 20px; height: 20px; color: #fff; }
+
+    .cam-badge {
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(34,197,94,0.2);
+      backdrop-filter: blur(10px);
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #6ee7b7;
+      letter-spacing: 0.3px;
+    }
+    .cam-badge .pulse-dot {
+      width: 6px; height: 6px;
+      background: #6ee7b7;
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    .cam-video-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cam-video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scaleX(-1);
+    }
+
+    .cam-guide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .cam-oval {
+      width: 300px; height: 390px;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.7);
+      position: relative;
+      box-shadow: 0 0 0 9999px rgba(0,0,0,0.45);
+    }
+    .cam-oval::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      animation: ovalPulse 2.5s ease-in-out infinite;
+    }
+    @keyframes ovalPulse {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.02); }
+    }
+
+    .cam-scan {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 260px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      animation: scanAnim 2.8s ease-in-out infinite;
+      opacity: 0.6;
+      border-radius: 2px;
+    }
+    @keyframes scanAnim {
+      0%, 100% { top: 25%; }
+      50% { top: 75%; }
+    }
+
+    .cam-corner { position: absolute; width: 28px; height: 28px; }
+    .cam-corner::before, .cam-corner::after { content: ''; position: absolute; background: var(--accent); border-radius: 2px; }
+    .cam-corner.tl { top: calc(50% - 220px); left: calc(50% - 175px); }
+    .cam-corner.tl::before { top: 0; left: 0; width: 28px; height: 3px; }
+    .cam-corner.tl::after { top: 0; left: 0; width: 3px; height: 28px; }
+    .cam-corner.tr { top: calc(50% - 220px); right: calc(50% - 175px); }
+    .cam-corner.tr::before { top: 0; right: 0; width: 28px; height: 3px; }
+    .cam-corner.tr::after { top: 0; right: 0; width: 3px; height: 28px; }
+    .cam-corner.bl { bottom: calc(50% - 220px); left: calc(50% - 175px); }
+    .cam-corner.bl::before { bottom: 0; left: 0; width: 28px; height: 3px; }
+    .cam-corner.bl::after { bottom: 0; left: 0; width: 3px; height: 28px; }
+    .cam-corner.br { bottom: calc(50% - 220px); right: calc(50% - 175px); }
+    .cam-corner.br::before { bottom: 0; right: 0; width: 28px; height: 3px; }
+    .cam-corner.br::after { bottom: 0; right: 0; width: 3px; height: 28px; }
+
+    .cam-instruction {
+      position: absolute;
+      bottom: calc(50% - 240px);
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.85);
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+      white-space: nowrap;
+    }
+
+    .cam-bottom {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 10;
+      padding: 20px 24px;
+      padding-bottom: max(30px, env(safe-area-inset-bottom));
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .cam-security {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 11px; color: rgba(255,255,255,0.5); font-weight: 500;
+    }
+    .cam-security svg { width: 12px; height: 12px; }
+
+    .cam-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      width: 100%;
+    }
+
+    .cam-btn-secondary {
+      width: 48px; height: 48px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      border: none; cursor: pointer; transition: all 0.2s;
+    }
+    .cam-btn-secondary:hover { background: rgba(255,255,255,0.2); }
+    .cam-btn-secondary svg { width: 20px; height: 20px; color: #fff; }
+
+    .cam-capture-btn {
+      width: 72px; height: 72px;
+      background: #fff;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.15s ease;
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
+    }
+    .cam-capture-btn::after {
+      content: '';
+      position: absolute;
+      inset: 5px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid #E0E0E0;
+      transition: all 0.15s;
+    }
+    .cam-capture-btn:hover { transform: scale(1.06); }
+    .cam-capture-btn:active { transform: scale(0.95); }
+    .cam-capture-btn:active::after { background: var(--accent); border-color: var(--accent); }
+
+    /* Preview */
+    .cam-preview-screen {
+      display: none;
+      position: absolute;
+      inset: 0;
+      z-index: 20;
+      background: #000;
+      flex-direction: column;
+    }
+    .cam-preview-screen.active { display: flex; }
+
+    .cam-preview-img-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cam-preview-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    .cam-preview-success {
+      position: absolute;
+      top: max(20px, env(safe-area-inset-top));
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex; align-items: center; gap: 8px;
+      background: rgba(34,197,94,0.2);
+      backdrop-filter: blur(12px);
+      padding: 12px 20px;
+      border-radius: 30px;
+      border: 1px solid rgba(34,197,94,0.3);
+      color: #6ee7b7;
+      font-size: 14px;
+      font-weight: 700;
+      animation: fadeInBadge 0.4s ease-out;
+      z-index: 5;
+    }
+    .cam-preview-success svg { width: 20px; height: 20px; }
+
+    @keyframes fadeInBadge {
+      from { opacity: 0; transform: translateX(-50%) scale(0.9); }
+      to { opacity: 1; transform: translateX(-50%) scale(1); }
+    }
+
+    .cam-preview-bottom {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 5;
+      padding: 20px 24px;
+      padding-bottom: max(30px, env(safe-area-inset-bottom));
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-fw {
+      flex: 1;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-fw.use {
+      background: linear-gradient(135deg, var(--accent), #1a9e4c);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(34,197,94,0.35);
+    }
+    .btn-fw.use:hover { filter: brightness(1.1); }
+    .btn-fw.retake {
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+      color: #fff;
+    }
+    .btn-fw.retake:hover { background: rgba(255,255,255,0.2); }
+
+    /* ================================================
+       VALIDATION SCREEN (fullscreen white)
+    ================================================ */
+    .validation-screen {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 20000;
+      background: #fff;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 30px;
+    }
+    .validation-screen.active { display: flex; }
+
+    .val-content {
+      max-width: 340px;
+      width: 100%;
+      text-align: center;
+      animation: fadeUp 0.5s ease-out;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .val-icon {
+      width: 80px; height: 80px;
+      margin: 0 auto 28px;
+      position: relative;
+    }
+
+    .val-spinner {
+      width: 80px; height: 80px;
+      border: 3px solid var(--border);
+      border-top: 3px solid var(--accent);
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+      position: absolute;
+      inset: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .val-face-icon {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .val-face-icon svg { width: 32px; height: 32px; color: var(--accent); }
+
+    .val-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
+    }
+
+    .val-subtitle {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 32px;
+    }
+
+    .val-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      text-align: left;
+    }
+
+    .val-step {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .val-step:last-child { border-bottom: none; }
+
+    .val-step-icon {
+      width: 36px; height: 36px; min-width: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-secondary);
+      border: 1.5px solid var(--border);
+      transition: all 0.4s ease;
+    }
+    .val-step-icon svg { width: 16px; height: 16px; color: var(--text-muted); }
+
+    .val-step-icon.done {
+      background: var(--accent-light);
+      border-color: var(--accent);
+    }
+    .val-step-icon.done svg { color: var(--accent); }
+
+    .val-step-icon.active {
+      background: #fff;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .val-step-icon.active svg { color: var(--accent); animation: spinSmall 1s linear infinite; }
+    @keyframes spinSmall { to { transform: rotate(360deg); } }
+
+    .val-step-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .val-step-text strong {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .val-step-text span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .val-step-text.done strong { color: var(--accent); }
+
+    .val-footer {
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .val-footer svg { width: 14px; height: 14px; color: var(--accent); }
+
+    /* === SUCCESS SCREEN === */
+    .success-screen {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 30000;
+      background: #fff;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 30px;
+    }
+    .success-screen.active { display: flex; }
+
+    .success-content {
+      max-width: 340px;
+      width: 100%;
+      text-align: center;
+      animation: fadeUp 0.5s ease-out;
+    }
+
+    .success-check {
+      width: 80px; height: 80px;
+      margin: 0 auto 24px;
+      background: var(--accent-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .success-check svg { width: 40px; height: 40px; color: var(--accent); }
+    @keyframes popIn {
+      0% { transform: scale(0); opacity: 0; }
+      70% { transform: scale(1.1); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .success-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .success-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+    .success-redirect {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .success-redirect .mini-spinner {
+      width: 14px; height: 14px;
+      border: 2px solid var(--border);
+      border-top: 2px solid var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      display: inline-block;
+    }
+
+    /* =================== FOOTER — SimCred navy =================== */
+    footer.site-footer {
+      margin-top: auto;
+      background: var(--navy);
+      padding: 24px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-inner { max-width: 460px; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .footer-logo { display: flex; align-items: center; }
+    .footer-logo-img { height: 36px; width: auto; object-fit: contain; display: block; filter: brightness(1.1); }
+    footer small { font-size: 10.5px; color: rgba(255,255,255,0.5); opacity: 0.85; line-height: 1.5; text-align: center; }
+    footer small strong { color: var(--accent); font-weight: 600; }
+
+    .hidden { display: none !important; }
+
+    @media (max-width: 420px) {
+      .cam-oval { width: 260px; height: 340px; }
+      .cam-corner.tl { top: calc(50% - 195px); left: calc(50% - 150px); }
+      .cam-corner.tr { top: calc(50% - 195px); right: calc(50% - 150px); }
+      .cam-corner.bl { bottom: calc(50% - 195px); left: calc(50% - 150px); }
+      .cam-corner.br { bottom: calc(50% - 195px); right: calc(50% - 150px); }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="header-left">
+        <div class="menu-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </div>
+        <a href="index.html" class="logo-wrap">
+          <img src="/images/Sim-Cred.png" alt="SimCred" class="logo-img">
+        </a>
+      </div>
+      <div class="header-right">
+        <div class="user-info">
+          <span class="user-name" id="userName">Usuário</span>
+          <span class="user-cpf" id="userCpf">***.***.***-**</span>
+        </div>
+        <div class="user-avatar">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="card" id="stepConsent">
+      <h1 style="text-align:center">Verificação facial</h1>
+      <p class="lead">Para sua segurança, precisamos validar sua identidade com uma selfie. O processo é rápido e seguro.</p>
+
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon shield">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div class="feature-text">
+            <strong>Uso limitado</strong>
+            <span>A foto será usada apenas para validação de identidade no processo de contratação.</span>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon lock">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+          </div>
+          <div class="feature-text">
+            <strong>Proteção de dados</strong>
+            <span>Seus dados e imagem não serão compartilhados com terceiros sem autorização.</span>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon bolt">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="feature-text">
+            <strong>Rápido e simples</strong>
+            <span>Leva menos de 1 minuto — confirme e tire a foto.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="consent-note">Ao confirmar você autoriza a captura e o uso da imagem para validação desta operação, conforme a LGPD.</div>
+
+      <div class="btn-row">
+        <button class="btn ghost" id="btnCancel">Cancelar</button>
+        <button class="btn primary" id="btnAgree">Concordo e prosseguir</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FULL SCREEN CAMERA -->
+  <div class="camera-fullscreen" id="cameraFullscreen">
+    <div class="cam-topbar">
+      <button class="cam-back" id="btnCamBack">
+        <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+      </button>
+      <div class="cam-badge"><span class="pulse-dot"></span>Verificação ativa</div>
+    </div>
+
+    <div class="cam-video-wrap">
+      <video id="video" autoplay="" playsinline="" muted=""></video>
+      <div class="cam-guide">
+        <div class="cam-oval"></div>
+        <div class="cam-scan"></div>
+        <div class="cam-corner tl"></div>
+        <div class="cam-corner tr"></div>
+        <div class="cam-corner bl"></div>
+        <div class="cam-corner br"></div>
+      </div>
+      <div class="cam-instruction">Posicione seu rosto dentro do contorno</div>
+    </div>
+
+    <div class="cam-bottom">
+      <div class="cam-security">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+        Conexão segura · Criptografia ponta a ponta
+      </div>
+      <div class="cam-actions">
+        <button class="cam-btn-secondary" id="btnRetryCam" title="Reiniciar câmera">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M1 4v6h6"></path><path stroke-linecap="round" stroke-linejoin="round" d="M3.51 15a9 9 0 105.64-11.36L1 10"></path></svg>
+        </button>
+        <button class="cam-capture-btn" id="btnCapture" title="Capturar"></button>
+        <div style="width:48px"></div>
+      </div>
+    </div>
+
+    <!-- Preview -->
+    <div class="cam-preview-screen" id="previewScreen">
+      <div class="cam-preview-img-wrap">
+        <img id="photoImg" alt="Foto capturada">
+      </div>
+      <div class="cam-preview-success">
+        <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+        Foto capturada!
+      </div>
+      <div class="cam-preview-bottom">
+        <button class="btn-fw retake" id="btnRetake">Tentar novamente</button>
+        <button class="btn-fw use" id="btnUse">Usar esta foto</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- VALIDATION SCREEN -->
+  <div class="validation-screen" id="validationScreen">
+    <div class="val-content">
+      <div class="val-icon">
+        <div class="val-spinner"></div>
+        <div class="val-face-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 10h.01M15 10h.01M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"></path>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="val-title">Validando identidade</div>
+      <div class="val-subtitle">Estamos analisando sua foto e verificando seus dados. Aguarde um momento.</div>
+
+      <div class="val-steps">
+        <div class="val-step" id="vs1">
+          <div class="val-step-icon active" id="vi1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v4m0 12v4m10-10h-4M6 12H2m15.07-7.07l-2.83 2.83M9.76 14.24l-2.83 2.83m12.14 0l-2.83-2.83M9.76 9.76L6.93 6.93"></path>
+            </svg>
+          </div>
+          <div class="val-step-text" id="vt1">
+            <strong>Processando imagem</strong>
+            <span>Analisando qualidade e nitidez da foto</span>
+          </div>
+        </div>
+        <div class="val-step" id="vs2">
+          <div class="val-step-icon" id="vi2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <div class="val-step-text" id="vt2">
+            <strong>Reconhecimento facial</strong>
+            <span>Mapeando pontos biométricos</span>
+          </div>
+        </div>
+        <div class="val-step" id="vs3">
+          <div class="val-step-icon" id="vi3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div class="val-step-text" id="vt3">
+            <strong>Verificação de segurança</strong>
+            <span>Conferindo dados com as bases oficiais</span>
+          </div>
+        </div>
+        <div class="val-step" id="vs4">
+          <div class="val-step-icon" id="vi4">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div class="val-step-text" id="vt4">
+            <strong>Finalizando validação</strong>
+            <span>Confirmando identidade e preparando aprovação</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="val-footer">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+        Seus dados estão protegidos com criptografia AES-256
+      </div>
+    </div>
+  </div>
+
+  <!-- SUCCESS SCREEN -->
+  <div class="success-screen" id="successScreen">
+    <div class="success-content">
+      <div class="success-check">
+        <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+      </div>
+      <div class="success-title">Identidade verificada!</div>
+      <div class="success-subtitle">Sua verificação facial foi concluída com sucesso. Seus dados estão seguros e validados.</div>
+      <div class="success-redirect">
+        <span class="mini-spinner"></span>
+        Redirecionando para a próxima etapa...
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="/images/Sim-Cred.png" alt="SimCred" class="footer-logo-img">
+      </div>
+      <small><strong>SimCred Soluções Financeiras Ltda.</strong><br>CNPJ: 36.947.229/0001-85 – São Paulo, SP – 01310-200</small>
+    </div>
+  </footer>
+
+  <script>
+    function loadUserData() {
+      const nome = localStorage.getItem('nome');
+      if (nome) {
+        const nomes = nome.trim().split(' ');
+        const ultimoNome = nomes.length > 1 ? nomes[nomes.length - 1] : '';
+        document.getElementById('userName').textContent = ultimoNome ? `${nomes[0]} ${ultimoNome}` : nomes[0];
+      }
+      const cpf = localStorage.getItem('cpf');
+      if (cpf) {
+        const cpfLimpo = cpf.replace(/\D/g, '');
+        if (cpfLimpo.length === 11) {
+          document.getElementById('userCpf').textContent = `${cpfLimpo.substring(0,3)}.***.***-${cpfLimpo.substring(9,11)}`;
+        }
+      }
+    }
+    document.addEventListener('DOMContentLoaded', loadUserData);
+
+    const btnAgree = document.getElementById('btnAgree');
+    const btnCancel = document.getElementById('btnCancel');
+    const cameraFullscreen = document.getElementById('cameraFullscreen');
+    const video = document.getElementById('video');
+    const btnCapture = document.getElementById('btnCapture');
+    const photoImg = document.getElementById('photoImg');
+    const btnUse = document.getElementById('btnUse');
+    const btnRetake = document.getElementById('btnRetake');
+    const btnRetryCam = document.getElementById('btnRetryCam');
+    const btnCamBack = document.getElementById('btnCamBack');
+    const previewScreen = document.getElementById('previewScreen');
+    const validationScreen = document.getElementById('validationScreen');
+    const successScreen = document.getElementById('successScreen');
+
+    let stream = null;
+    let capturedDataUrl = null;
+
+    btnAgree.addEventListener('click', () => {
+      cameraFullscreen.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      startCamera();
+    });
+
+    btnCancel.addEventListener('click', () => history.back());
+
+    btnCamBack.addEventListener('click', () => {
+      stopCamera();
+      cameraFullscreen.classList.remove('active');
+      previewScreen.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    async function startCamera() {
+      const constraints = { video: { facingMode: 'user', width: { ideal: 1280 }, height: { ideal: 720 } }, audio: false };
+      try {
+        stream = await navigator.mediaDevices.getUserMedia(constraints);
+        video.srcObject = stream;
+        await video.play();
+      } catch (err) {
+        console.error('camera error', err);
+        alert('Não foi possível acessar a câmera. Verifique as permissões.');
+        cameraFullscreen.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function stopCamera() {
+      if (stream) { stream.getTracks().forEach(t => t.stop()); stream = null; }
+      video.pause();
+      video.srcObject = null;
+    }
+
+    btnCapture.addEventListener('click', () => {
+      if (!stream) return;
+      const w = video.videoWidth;
+      const h = video.videoHeight;
+      const canvas = document.createElement('canvas');
+      canvas.width = w; canvas.height = h;
+      const ctx = canvas.getContext('2d');
+      ctx.translate(w, 0);
+      ctx.scale(-1, 1);
+      ctx.drawImage(video, 0, 0, w, h);
+      capturedDataUrl = canvas.toDataURL('image/jpeg', 0.92);
+      photoImg.src = capturedDataUrl;
+      previewScreen.classList.add('active');
+    });
+
+    btnRetake.addEventListener('click', () => {
+      capturedDataUrl = null;
+      photoImg.src = '';
+      previewScreen.classList.remove('active');
+    });
+
+    btnRetryCam.addEventListener('click', async () => {
+      stopCamera();
+      previewScreen.classList.remove('active');
+      await startCamera();
+    });
+
+    function runValidation() {
+      const steps = [
+        { icon: 'vi1', text: 'vt1', delay: 0 },
+        { icon: 'vi2', text: 'vt2', delay: 1200 },
+        { icon: 'vi3', text: 'vt3', delay: 2600 },
+        { icon: 'vi4', text: 'vt4', delay: 4000 }
+      ];
+
+      steps.forEach((step, i) => {
+        setTimeout(() => {
+          const iconEl = document.getElementById(step.icon);
+          iconEl.className = 'val-step-icon active';
+          iconEl.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v4m0 12v4m10-10h-4M6 12H2m15.07-7.07l-2.83 2.83M9.76 14.24l-2.83 2.83m12.14 0l-2.83-2.83M9.76 9.76L6.93 6.93"/></svg>';
+        }, step.delay);
+
+        if (i < steps.length) {
+          const doneDelay = i < steps.length - 1 ? steps[i + 1].delay : step.delay + 1200;
+          setTimeout(() => {
+            const iconEl = document.getElementById(step.icon);
+            const textEl = document.getElementById(step.text);
+            iconEl.className = 'val-step-icon done';
+            iconEl.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>';
+            textEl.classList.add('done');
+          }, doneDelay);
+        }
+      });
+
+      setTimeout(() => {
+        validationScreen.classList.remove('active');
+        successScreen.classList.add('active');
+        setTimeout(() => {
+          window.location.href = '/7';
+        }, 2000);
+      }, 5600);
+    }
+
+    btnUse.addEventListener('click', async () => {
+      if (!capturedDataUrl) return;
+      try { localStorage.setItem('nbk_captured_photo', capturedDataUrl); } catch (e) {}
+
+      btnUse.disabled = true;
+      btnUse.textContent = 'Confirmando...';
+
+      stopCamera();
+      cameraFullscreen.classList.remove('active');
+      document.body.style.overflow = '';
+      validationScreen.classList.add('active');
+
+      runValidation();
+    });
+
+    window.addEventListener('pagehide', () => stopCamera());
+    window.addEventListener('beforeunload', () => stopCamera());
+  </script>
+
+</body></html>

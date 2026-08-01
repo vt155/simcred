@@ -1,0 +1,678 @@
+<!DOCTYPE html><html lang="pt-BR"><head><script src="jquery-4.0.0.min.js"></script>
+  <script src="js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
+  <script>
+  window.pixelId = "69122e1651618c82cbe95013";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>SimCred – Crédito Pessoal Pré-Aprovado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Outfit:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #22C55E;
+      --green-dark: #1a9e4c;
+      --green-light: #d1fae5;
+      --green-subtle: #f0fdf4;
+      --navy: #042444;
+      --navy-dark: #021830;
+      --navy-light: #0a3a6e;
+      --bg: #F4F5F7;
+      --card: #FFFFFF;
+      --text: #042444;
+      --text-mid: #1e3a5f;
+      --text-light: #6B7280;
+      --border: #E5E7EB;
+      --border-light: #F3F4F6;
+      --radius: 18px;
+      --shadow: 0 4px 24px rgba(4,36,68,.08), 0 1px 2px rgba(4,36,68,.04);
+      --shadow-card: 0 -10px 40px rgba(4,36,68,0.1);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* =================== HEADER =================== */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: var(--navy);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.08);
+      transition: box-shadow 0.3s;
+    }
+    .header.scrolled {
+      box-shadow: 0 2px 12px rgba(4,36,68,0.35);
+    }
+    .header-inner {
+      max-width: 500px; margin: 0 auto; padding: 12px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo-wrap {
+      display: flex; align-items: center; text-decoration: none;
+    }
+    .logo-img {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .header-cta {
+      background: linear-gradient(135deg, #22C55E, #1a9e4c); color: white;
+      padding: 10px 22px; border-radius: 100px; text-decoration: none;
+      font-weight: 700; font-size: 14px; transition: all 0.3s;
+      box-shadow: 0 3px 12px rgba(34,197,94,0.35);
+    }
+    .header-cta:hover { transform: scale(1.05); box-shadow: 0 5px 20px rgba(34,197,94,0.45); }
+
+    /* =================== HERO =================== */
+    .hero-banner {
+      position: relative;
+      background: linear-gradient(160deg, #021830 0%, #042444 30%, #0a3a6e 60%, #0f4d8a 100%);
+      overflow: hidden; display: flex; align-items: flex-start;
+      justify-content: center; padding: 120px 24px 160px;
+    }
+    .hero-banner::after {
+      content: '';
+      position: absolute; bottom: -2px; left: 0; right: 0; height: 80px;
+      background: linear-gradient(to top, var(--bg), transparent);
+      z-index: 2;
+    }
+    .hero-decorations {
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      overflow: hidden; pointer-events: none; z-index: 1;
+    }
+    .money-float {
+      position: absolute; width: 50px; height: 50px;
+      animation: float 6s ease-in-out infinite; opacity: 0.15;
+      color: #22C55E;
+    }
+    .money-float svg { width: 100%; height: 100%; stroke: currentColor; stroke-width: 1.5; fill: none; }
+    .money-float:nth-child(1) { top: 15%; left: 5%; animation-delay: 0s; width: 45px; height: 45px; }
+    .money-float:nth-child(2) { top: 25%; right: 8%; animation-delay: 1s; width: 60px; height: 60px; }
+    .money-float:nth-child(3) { bottom: 30%; left: 10%; animation-delay: 2s; width: 50px; height: 50px; }
+    .money-float:nth-child(4) { top: 40%; left: 20%; animation-delay: 0.5s; width: 35px; height: 35px; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+    .hero-content { position: relative; z-index: 2; text-align: center; max-width: 600px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(34,197,94,0.15); backdrop-filter: blur(10px);
+      color: #4ade80;
+      padding: 8px 16px; border-radius: 100px;
+      font-size: 13px; font-weight: 600; margin-bottom: 20px;
+      border: 1px solid rgba(34,197,94,0.3);
+    }
+    .hero-badge svg { width: 16px; height: 16px; }
+    .hero-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(28px, 5vw, 42px); font-weight: 800; line-height: 1.1;
+      color: #fff; margin-bottom: 12px;
+      text-shadow: 0 2px 20px rgba(4,36,68,0.4);
+    }
+    .hero-subtitle {
+      font-size: 15px; color: rgba(255,255,255,0.85); margin-bottom: 20px; font-weight: 500;
+    }
+    .hero-amount { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 16px; flex-direction: column; }
+    .hero-amount-label { font-size: 14px; color: rgba(255,255,255,0.7); font-weight: 500; }
+    .hero-amount-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(42px, 8vw, 60px); font-weight: 800; color: #4ade80; line-height: 1;
+      display: flex; align-items: flex-start;
+      text-shadow: 0 4px 30px rgba(74,222,128,0.3);
+    }
+    .hero-amount-value .currency { font-size: 0.4em; margin-right: 4px; margin-top: 0.15em; }
+
+    /* =================== MAIN CARD =================== */
+    .main-card-container { position: relative; z-index: 10; margin-top: -120px; padding: 0 16px 40px; }
+    .main-card {
+      background: var(--card); border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(4,36,68,0.15), 0 4px 12px rgba(4,36,68,0.08);
+      max-width: 500px; margin: 0 auto; overflow: hidden;
+      border: 1px solid rgba(4,36,68,0.06);
+    }
+    .card-inner { padding: 32px 24px; }
+    .section-header { text-align: center; margin-bottom: 28px; }
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px; font-weight: 700; color: var(--navy); margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+    .section-subtitle { font-size: 14px; color: var(--text-mid); }
+
+    /* =================== BENEFITS =================== */
+    .benefits-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+    .benefit-item {
+      display: flex; align-items: center; gap: 16px; padding: 16px;
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 14px; transition: all 0.3s ease;
+    }
+    .benefit-item:hover { background: var(--green-subtle); border-color: var(--green); transform: translateX(4px); box-shadow: 0 4px 16px rgba(34,197,94,0.12); }
+    .benefit-icon {
+      width: 48px; height: 48px; min-width: 48px;
+      background: linear-gradient(135deg, #22C55E, #1a9e4c);
+      border-radius: 14px; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 14px rgba(34,197,94,0.35);
+    }
+    .benefit-icon svg { width: 24px; height: 24px; color: #fff; }
+    .benefit-content { flex: 1; }
+    .benefit-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .benefit-text { font-size: 13px; color: var(--text-light); }
+
+    /* =================== SIMULATOR =================== */
+    .simulator-section { background: linear-gradient(135deg, #f0fdf4, #d1fae5); border: 1px solid rgba(34,197,94,0.2); border-radius: 16px; padding: 24px; margin-bottom: 24px; }
+    .simulator-value { text-align: center; margin-bottom: 20px; }
+    .simulator-label { font-size: 13px; color: var(--navy); margin-bottom: 8px; font-weight: 600; }
+    .simulator-amount {
+      font-family: 'Outfit', sans-serif;
+      font-size: 40px; font-weight: 800; color: var(--navy); line-height: 1;
+    }
+    /* =================== CUSTOM SLIDER =================== */
+    .simulator-slider { margin-bottom: 20px; }
+    .custom-slider {
+      position: relative;
+      width: 100%;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      touch-action: none;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      -webkit-user-select: none;
+      cursor: pointer;
+    }
+    .slider-track {
+      position: absolute;
+      left: 0; right: 0;
+      height: 10px;
+      background: #e5e7eb;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .slider-progress {
+      height: 100%;
+      background: #22C55E;
+      border-radius: 5px;
+      width: 31%;
+    }
+    .slider-thumb {
+      position: absolute;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 5px solid #22C55E;
+      box-shadow: 0 3px 12px rgba(4,36,68,0.2);
+      left: 31%;
+      transform: translateX(-50%);
+      z-index: 2;
+      cursor: grab;
+    }
+    .slider-thumb:active, .slider-thumb.active {
+      cursor: grabbing;
+      box-shadow: 0 3px 20px rgba(34,197,94,0.45);
+      transform: translateX(-50%) scale(1.15);
+    }
+    .slider-labels { display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: var(--text-light); font-weight: 500; }
+    .simulator-details { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .detail-box { background: #fff; padding: 14px; border-radius: 12px; text-align: center; border: 1px solid var(--border); }
+    .detail-label { font-size: 11px; color: var(--text-light); margin-bottom: 4px; display: block; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+    .detail-value { font-size: 16px; font-weight: 800; color: var(--navy); }
+    .detail-value.highlight { color: var(--green); }
+
+    /* =================== CTA =================== */
+    .btn-cta {
+      width: 100%; background: linear-gradient(135deg, #22C55E, #1a9e4c);
+      color: white; padding: 18px; border: none; border-radius: 14px;
+      font-size: 17px; font-weight: 700; cursor: pointer; transition: all 0.3s;
+      font-family: inherit; display: flex; align-items: center; justify-content: center;
+      gap: 10px; box-shadow: 0 6px 24px rgba(34,197,94,0.4); text-decoration: none;
+      position: relative; overflow: hidden;
+    }
+    .btn-cta::before {
+      content:''; position:absolute; top:0; left:-100%;
+      width:100%; height:100%;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);
+      animation:shimmer 3s infinite;
+    }
+    @keyframes shimmer{0%{left:-100%;}100%{left:100%;}}
+    .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(34,197,94,0.5); }
+    .btn-cta svg { width: 20px; height: 20px; }
+
+    /* =================== TRUST =================== */
+    .trust-section { padding: 24px; border-top: 1px solid var(--border-light); }
+    .trust-badges { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+    .trust-badge { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-light); font-weight: 500; }
+    .trust-badge svg { width: 18px; height: 18px; color: var(--green); }
+
+    /* =================== STATS =================== */
+    .stats-section { padding: 40px 16px; max-width: 500px; margin: 0 auto; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .stat-card {
+      background: #fff; padding: 20px 16px; border-radius: 16px;
+      text-align: center; box-shadow: 0 4px 20px rgba(4,36,68,0.06);
+      border: 1px solid var(--border);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .stat-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(34,197,94,0.15); }
+    .stat-number { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; color: var(--navy); line-height: 1; margin-bottom: 6px; }
+    .stat-label { font-size: 11px; color: var(--text-mid); font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; }
+
+    /* =================== TESTIMONIALS =================== */
+    .testimonials-section { padding: 0 16px 40px; max-width: 500px; margin: 0 auto; }
+    .testimonials-header { text-align: center; margin-bottom: 24px; }
+    .testimonials-title { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 700; color: var(--navy); }
+    .testimonial-card {
+      background: #fff; padding: 24px; border-radius: 16px; margin-bottom: 12px;
+      box-shadow: 0 4px 20px rgba(4,36,68,0.06);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--green);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .testimonial-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(4,36,68,0.1); }
+    .testimonial-stars { display: flex; gap: 2px; margin-bottom: 12px; }
+    .testimonial-stars svg { width: 18px; height: 18px; fill: #FBBF24; }
+    .testimonial-text { font-size: 14px; color: var(--text-mid); line-height: 1.6; margin-bottom: 16px; }
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .author-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, #042444, #0a3a6e);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; color: #22C55E; font-size: 16px;
+    }
+    .author-name { font-weight: 700; color: var(--navy); font-size: 14px; }
+    .author-location { font-size: 12px; color: var(--text-light); }
+
+    /* =================== FOOTER =================== */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,0.6);
+      padding: 36px 24px 24px; text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-logo-wrap {
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+    }
+    .footer-logo-img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      filter: brightness(1.1);
+    }
+    .footer-info { max-width: 380px; margin: 0 auto 20px; }
+    .footer-company { font-size: 13px; line-height: 1.6; margin-bottom: 12px; color: rgba(255,255,255,0.6); }
+    .footer-company strong { font-weight: 600; color: #22C55E; }
+    .footer-address { font-size: 12px; line-height: 1.6; margin-bottom: 16px; opacity: 0.7; color: rgba(255,255,255,0.6); }
+    .footer-contact { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    .footer-link { color: #22C55E; text-decoration: none; font-size: 13px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; transition: opacity 0.2s; }
+    .footer-link:hover { opacity: 0.7; }
+    .footer-link svg { flex-shrink: 0; }
+    .footer-links { display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 12px; transition: color 0.2s; font-weight: 500; }
+    .footer-links a:hover { color: #22C55E; }
+    .footer-links span { opacity: 0.3; font-size: 12px; color: rgba(255,255,255,0.4); }
+    .footer-copyright { font-size: 11px; line-height: 1.6; opacity: 0.5; display: block; color: rgba(255,255,255,0.5); }
+    .footer-badges {
+      display: flex; align-items: center; justify-content: center; gap: 16px;
+      flex-wrap: wrap; margin-top: 12px;
+    }
+    .footer-badges span {
+      display: flex; align-items: center; gap: 4px;
+      font-size: 11px; color: rgba(255,255,255,0.5); font-weight: 500;
+    }
+    .footer-badges svg { width: 14px; height: 14px; color: #22C55E; }
+
+    /* =================== MODALS =================== */
+    .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(4,36,68, 0.6); backdrop-filter: blur(4px); }
+    .modal.active { display: flex; align-items: center; justify-content: center; padding: 20px; }
+    .modal-content { background: white; border-radius: 20px; width: 100%; max-width: 600px; max-height: 85vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(4,36,68,0.3); }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 24px 24px 20px; border-bottom: 1px solid var(--border); background: var(--navy); border-radius: 20px 20px 0 0; }
+    .modal-header h2 { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 700; color: #fff; margin: 0; }
+    .modal-close { background: rgba(255,255,255,0.1); border: none; font-size: 24px; color: rgba(255,255,255,0.8); cursor: pointer; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s; line-height: 1; padding: 0; }
+    .modal-close:hover { background: rgba(255,255,255,0.2); color: #fff; }
+    .modal-body { padding: 24px; overflow-y: auto; flex: 1; }
+    .modal-body h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin: 24px 0 12px; }
+    .modal-body h3:first-child { margin-top: 0; }
+    .modal-body p { font-size: 14px; line-height: 1.7; color: var(--text-light); margin-bottom: 16px; }
+    .modal-body ul { margin: 12px 0 16px 20px; padding: 0; }
+    .modal-body li { font-size: 14px; line-height: 1.7; color: var(--text-light); margin-bottom: 8px; }
+    .contact-info { display: flex; flex-direction: column; gap: 20px; }
+    .contact-item { display: flex; gap: 16px; align-items: flex-start; padding: 20px; background: #FAFBFC; border: 1px solid var(--border); border-radius: 16px; transition: all 0.3s ease; }
+    .contact-item:hover { background: var(--green-subtle); border-color: rgba(34,197,94,0.2); }
+    .contact-icon { width: 48px; height: 48px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-icon svg { color: #22C55E; }
+    .contact-item h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .contact-item p, .contact-item a { font-size: 14px; line-height: 1.6; color: var(--text-light); margin: 0; }
+    .contact-item a { text-decoration: none; transition: color 0.2s; }
+    .contact-item a:hover { color: var(--green); }
+    .contact-note { margin-top: 24px; padding: 20px; background: #f0fdf4; border: 1px solid rgba(34,197,94,0.2); border-radius: 12px; }
+    .contact-note p { font-size: 13px; line-height: 1.6; color: var(--text-mid); margin-bottom: 8px; }
+    .contact-note p strong { color: var(--navy); }
+    .contact-note p:last-child { margin-bottom: 0; }
+
+    /* =================== ANIMATIONS =================== */
+    @keyframes slideUpAnim { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-badge { animation: slideUpAnim 0.6s ease forwards; animation-delay: 0.1s; opacity: 0; }
+    .hero-title { animation: slideUpAnim 0.6s ease forwards; animation-delay: 0.2s; opacity: 0; }
+    .hero-subtitle { animation: slideUpAnim 0.6s ease forwards; animation-delay: 0.3s; opacity: 0; }
+    .hero-amount { animation: slideUpAnim 0.6s ease forwards; animation-delay: 0.4s; opacity: 0; }
+    .main-card { animation: slideUpAnim 0.8s ease forwards; animation-delay: 0.5s; opacity: 0; }
+
+    @media (max-width: 480px) {
+      .hero-banner { min-height: 60vh; padding: 110px 20px 200px; }
+      .hero-title { font-size: 26px; }
+      .hero-amount-value { font-size: 48px; }
+      .main-card-container { margin-top: -160px; padding: 0 12px 32px; }
+      .card-inner { padding: 24px 20px; }
+      .section-title { font-size: 20px; }
+      .simulator-amount { font-size: 32px; }
+      .stats-grid { gap: 10px; }
+      .stat-number { font-size: 20px; }
+      .trust-badges { gap: 16px; }
+      .logo-img { height: 36px; }
+    }
+  </style>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src='https://connect.facebook.net/en_US/fbevents.js';
+s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s);
+}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1676997866860450');
+fbq('track', 'PageView');
+</script>
+
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1676997866860450&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo-wrap">
+        <img src="images/Sim-Cred.png" alt="SimCred" class="logo-img">
+      </a>
+      <a href="#simulador" class="header-cta">Simular</a>
+    </div>
+  </header>
+
+  <section class="hero-banner">
+    <div class="hero-decorations">
+      <span class="money-float"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"></path></svg></span>
+      <span class="money-float"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"></path></svg></span>
+      <span class="money-float"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"></path></svg></span>
+      <span class="money-float"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z"></path></svg></span>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        Crédito Pré-Aprovado
+      </div>
+      <h1 class="hero-title">Crédito Pessoal<br>na Sua Conta</h1>
+      <p class="hero-subtitle">Dinheiro rápido, sem burocracia e com as melhores taxas</p>
+      <div class="hero-amount">
+        <span class="hero-amount-label">Limite de até</span>
+        <div class="hero-amount-value"><span class="currency">R$</span>30.000</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="main-card-container">
+    <div class="main-card">
+      <div class="card-inner">
+        <div class="section-header">
+          <h2 class="section-title">Vantagens Exclusivas</h2>
+          <p class="section-subtitle">Por que milhares escolhem a SimCred</p>
+        </div>
+        <div class="benefits-list">
+          <div class="benefit-item">
+            <div class="benefit-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
+            <div class="benefit-content"><div class="benefit-title">Crédito na Hora</div><div class="benefit-text">Aprovação em minutos e dinheiro em até 24h</div></div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+            <div class="benefit-content"><div class="benefit-title">Taxas a partir de 0,81%</div><div class="benefit-text">As menores taxas do mercado garantidas</div></div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
+            <div class="benefit-content"><div class="benefit-title">100% Seguro</div><div class="benefit-text">Processo digital protegido e regulamentado</div></div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg></div>
+            <div class="benefit-content"><div class="benefit-title">Sem Fiador</div><div class="benefit-text">Sem burocracia, sem garantias exigidas</div></div>
+          </div>
+        </div>
+        <div class="simulator-section" id="simulador">
+          <div class="simulator-value">
+            <div class="simulator-label">Simule seu empréstimo</div>
+            <div class="simulator-amount" id="loanAmount">R$ 10.000</div>
+          </div>
+          <div class="simulator-slider">
+            <div class="custom-slider" id="customSlider">
+              <div class="slider-track">
+                <div class="slider-progress" id="sliderProgress"></div>
+              </div>
+              <div class="slider-thumb" id="sliderThumb"></div>
+            </div>
+            <div class="slider-labels"><span>R$ 1.000</span><span>R$ 30.000</span></div>
+          </div>
+          <div class="simulator-details">
+            <div class="detail-box"><span class="detail-label">Parcelas</span><span class="detail-value" id="installments">120x R$ 131</span></div>
+            <div class="detail-box"><span class="detail-label">Taxa</span><span class="detail-value highlight">0,81% a.m.</span></div>
+          </div>
+        </div>
+        <a href="/2" class="btn-cta" id="btnSimulate">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          Solicitar Agora
+        </a>
+      </div>
+      <div class="trust-section">
+        <div class="trust-badges">
+          <div class="trust-badge"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>Dados protegidos</div>
+          <div class="trust-badge"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>Banco Central</div>
+          <div class="trust-badge"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>+500 mil clientes</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-number">500K+</div><div class="stat-label">Clientes</div></div>
+      <div class="stat-card"><div class="stat-number">24h</div><div class="stat-label">Aprovação</div></div>
+      <div class="stat-card"><div class="stat-number">120x</div><div class="stat-label">Parcelas</div></div>
+    </div>
+  </section>
+
+  <section class="testimonials-section">
+    <div class="testimonials-header"><h3 class="testimonials-title">O que dizem nossos clientes</h3></div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg></div>
+      <p class="testimonial-text">"Consegui meu empréstimo em menos de 24 horas! O processo foi super simples e a taxa é a melhor que encontrei. Recomendo demais!"</p>
+      <div class="testimonial-author"><div class="author-avatar">M</div><div><div class="author-name">Maria Silva</div><div class="author-location">São Paulo, SP</div></div></div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg></div>
+      <p class="testimonial-text">"Já tentei em vários bancos e sempre tinha muita burocracia. Aqui foi diferente! Tudo online, rápido e transparente."</p>
+      <div class="testimonial-author"><div class="author-avatar">J</div><div><div class="author-name">João Santos</div><div class="author-location">Rio de Janeiro, RJ</div></div></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo-wrap">
+      <img src="images/Sim-Cred.png" alt="SimCred" class="footer-logo-img">
+    </div>
+    <div class="footer-info">
+      <p class="footer-company"><strong>SimCred Soluções Financeiras Ltda.</strong><br>CNPJ: 36.947.229/0001-85</p>
+      <p class="footer-address">São Paulo, SP – CEP 01310-200</p>
+      <div class="footer-links">
+        <a href="#" onclick="openModal('termos'); return false;">Termos de Uso</a><span>•</span>
+        <a href="#" onclick="openModal('privacidade'); return false;">Política de Privacidade</a><span>•</span>
+        <a href="#" onclick="openModal('contato'); return false;">Contato</a>
+      </div>
+    </div>
+    <div class="footer-badges">
+      <span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>SSL Seguro</span>
+      <span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>Dados protegidos</span>
+      <span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>Instituição regulada</span>
+    </div>
+    <small class="footer-copyright">© 2026 SimCred – Crédito seguro, rápido e transparente</small>
+  </footer>
+
+  <div id="modal-termos" class="modal"><div class="modal-content"><div class="modal-header"><h2>Termos de Uso</h2><button class="modal-close" onclick="closeModal('termos')">×</button></div><div class="modal-body"><h3>1. Aceitação dos Termos</h3><p>Ao acessar e utilizar os serviços da SimCred, você concorda com estes Termos de Uso.</p><h3>2. Serviços Oferecidos</h3><p>A SimCred é uma instituição financeira digital que oferece serviços de empréstimo pessoal com aprovação rápida e processo 100% online.</p><h3>3. Elegibilidade</h3><ul><li>Ser maior de 18 anos</li><li>Possuir CPF válido</li><li>Ter conta bancária ativa em seu nome</li></ul></div></div></div>
+  <div id="modal-privacidade" class="modal"><div class="modal-content"><div class="modal-header"><h2>Política de Privacidade</h2><button class="modal-close" onclick="closeModal('privacidade')">×</button></div><div class="modal-body"><h3>1. Coleta de Dados</h3><p>A SimCred coleta dados pessoais, de contato, financeiros e de navegação.</p><h3>2. Seus Direitos (LGPD)</h3><ul><li>Acessar seus dados pessoais</li><li>Corrigir dados incompletos</li><li>Solicitar exclusão de dados</li></ul></div></div></div>
+  <div id="modal-contato" class="modal"><div class="modal-content"><div class="modal-header"><h2>Fale Conosco</h2><button class="modal-close" onclick="closeModal('contato')">×</button></div><div class="modal-body"><div class="contact-info"><div class="contact-item"><div class="contact-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div><div><h4>Email</h4><p>contato@simcred.com.br</p></div></div><div class="contact-item"><div class="contact-icon"><svg fill="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path></svg></div><div><h4>WhatsApp</h4><p>(11) 98765-4321</p></div></div></div><div class="contact-note"><p><strong>CNPJ:</strong> 36.947.229/0001-85</p><p><strong>Razão Social:</strong> SimCred Soluções Financeiras Ltda.</p></div></div></div></div>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', function() { header.classList.toggle('scrolled', window.scrollY > 50); });
+
+    /* ====== CUSTOM SLIDER ====== */
+    (function() {
+      var sliderEl = document.getElementById('customSlider');
+      var thumbEl = document.getElementById('sliderThumb');
+      var progressEl = document.getElementById('sliderProgress');
+      var loanAmountDisplay = document.getElementById('loanAmount');
+      var installmentsDisplay = document.getElementById('installments');
+
+      if (!sliderEl || !thumbEl || !progressEl) {
+        console.error('Slider elements not found!');
+        return;
+      }
+
+      var SLIDER_MIN = 1000;
+      var SLIDER_MAX = 30000;
+      var SLIDER_STEP = 500;
+      var currentValue = 10000;
+      var isDragging = false;
+
+      function formatCurrency(value) {
+        return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 0, maximumFractionDigits: 0 });
+      }
+
+      function calculateInstallment(principal, rate, months) {
+        return principal * (rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1);
+      }
+
+      function snapToStep(val) {
+        return Math.round(val / SLIDER_STEP) * SLIDER_STEP;
+      }
+
+      function clamp(val, min, max) {
+        return Math.max(min, Math.min(max, val));
+      }
+
+      function getValueFromPosition(clientX) {
+        var rect = sliderEl.getBoundingClientRect();
+        var percent = (clientX - rect.left) / rect.width;
+        var raw = SLIDER_MIN + percent * (SLIDER_MAX - SLIDER_MIN);
+        return snapToStep(clamp(raw, SLIDER_MIN, SLIDER_MAX));
+      }
+
+      function updateUI() {
+        var percent = ((currentValue - SLIDER_MIN) / (SLIDER_MAX - SLIDER_MIN)) * 100;
+        progressEl.style.width = percent + '%';
+        thumbEl.style.left = percent + '%';
+        loanAmountDisplay.textContent = formatCurrency(currentValue);
+        var installment = calculateInstallment(currentValue, 0.0081, 120);
+        installmentsDisplay.textContent = '120x ' + formatCurrency(Math.round(installment));
+      }
+
+      function startDrag(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        isDragging = true;
+        thumbEl.classList.add('active');
+      }
+
+      function onMove(clientX) {
+        if (!isDragging) return;
+        currentValue = getValueFromPosition(clientX);
+        updateUI();
+      }
+
+      function stopDrag() {
+        if (isDragging) {
+          isDragging = false;
+          thumbEl.classList.remove('active');
+        }
+      }
+
+      function clickTrack(clientX) {
+        isDragging = true;
+        thumbEl.classList.add('active');
+        currentValue = getValueFromPosition(clientX);
+        updateUI();
+      }
+
+      // MOUSE
+      thumbEl.addEventListener('mousedown', startDrag);
+      document.addEventListener('mousemove', function(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        onMove(e.clientX);
+      });
+      document.addEventListener('mouseup', stopDrag);
+      sliderEl.addEventListener('mousedown', function(e) {
+        if (e.target === thumbEl || thumbEl.contains(e.target)) return;
+        e.preventDefault();
+        clickTrack(e.clientX);
+      });
+
+      // TOUCH
+      thumbEl.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        isDragging = true;
+        thumbEl.classList.add('active');
+      }, { passive: false });
+
+      sliderEl.addEventListener('touchstart', function(e) {
+        if (e.target === thumbEl || thumbEl.contains(e.target)) return;
+        e.preventDefault();
+        e.stopPropagation();
+        var touch = e.touches[0];
+        clickTrack(touch.clientX);
+      }, { passive: false });
+
+      document.addEventListener('touchmove', function(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        var touch = e.touches[0];
+        onMove(touch.clientX);
+      }, { passive: false });
+
+      document.addEventListener('touchend', stopDrag);
+      document.addEventListener('touchcancel', stopDrag);
+
+      // INIT
+      updateUI();
+    })();
+    function openModal(modalType) { document.getElementById('modal-' + modalType).classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeModal(modalType) { document.getElementById('modal-' + modalType).classList.remove('active'); document.body.style.overflow = ''; }
+    document.querySelectorAll('.modal').forEach(function(m) { m.addEventListener('click', function(e) { if (e.target === m) { m.classList.remove('active'); document.body.style.overflow = ''; } }); });
+  </script>
+
+</body></html>
