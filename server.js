@@ -185,7 +185,9 @@ app.post('/api/public/webhooks/nomadspay', express.raw({ type: '*/*' }), handleW
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(__dirname, {
+  extensions: ['html']
+}));
 
 // ═══════════════════════════════════════════════════════
 //  PAGE ROUTES
